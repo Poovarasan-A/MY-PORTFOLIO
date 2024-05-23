@@ -37,6 +37,7 @@ const HomeContent = () => {
       <div className="lg:w-[50%] h-full relative flex flex-col items-center justify-center opacity-[90%] pt-[6rem]">
         <Image
           src={profile}
+          priority
           className="lg:w-[22rem] w-[15rem] pb-6"
           alt="Profile"
         />

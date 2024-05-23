@@ -13,10 +13,10 @@ const Homepage = () => {
           alt="main"
           quality={100}
           fill
-          // priority
+          priority
           sizes="100vw"
           style={{ objectFit: "cover" }}
-          loading="lazy"
+          // loading="lazy"
         />
       </div>
       <HomeContent />

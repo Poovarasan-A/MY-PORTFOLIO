@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+type AddBase = (styles: Record<string, any>) => void;
+type Theme = (path: string) => Record<string, any>;
 
 const config: Config = {
   content: [
@@ -34,7 +36,23 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-function addVariablesForColors({ addBase, theme }) {
+// function addVariablesForColors({ addBase, theme }) {
+//   let allColors = flattenColorPalette(theme("colors"));
+//   let newVars = Object.fromEntries(
+//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+//   );
+
+//   addBase({
+//     ":root": newVars,
+//   });
+// }
+function addVariablesForColors({
+  addBase,
+  theme,
+}: {
+  addBase: AddBase;
+  theme: Theme;
+}) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
