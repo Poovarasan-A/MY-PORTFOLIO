@@ -65,7 +65,9 @@ const Contact = () => {
       </div>
       <div className="w-[100%] h-full lg:flex justify-center items-center z-50">
         <div className="lg:w-[50%] w-full lg:h-[80%] flex flex-col justify-center items-start lg:pl-[5rem] px-[2rem]">
-          <h2 className="text-[4rem] text-bolder">Let&apos;s talk</h2>
+          <h2 className="lg:text-[4rem] text-[3rem] text-bolder">
+            Let&apos;s talk
+          </h2>
           <p className="text-xl font-semibold lg:pb-10 pb-5">
             If you like my projects, just say hi !
           </p>
@@ -98,7 +100,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="flex flex-col w-full gap-4">
+              <div className="flex flex-col w-full gap-4 pt-5 lg:pt-0">
                 <label htmlFor="email">Email</label>
                 <input
                   className="py-3 bg-inherit border-white outline-none border-b-2"
@@ -138,7 +140,7 @@ const Contact = () => {
         )}
       </div>
       <div className="h-[20%] w-full flex lg:flex-row flex-col items-center justify-around">
-        <div className="flex gap-10 text-violet-500 ">
+        <div className="flex gap-10 text-violet-500 lg:py-0 py-5">
           <Link
             href="https://github.com/Poovarasan-A"
             className="border-2 border-dotted border-white rounded-full p-3 animate-spin-slow"
