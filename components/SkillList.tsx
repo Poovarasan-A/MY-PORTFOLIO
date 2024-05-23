@@ -1,15 +1,33 @@
 "use client";
 
-import { label } from "three/examples/jsm/nodes/Nodes.js";
+import { useEffect, useState } from "react";
 import { skillsList } from "../app/data";
 import Link from "next/link";
 
 const SkillList = () => {
+  const [radius, setRadius] = useState(12);
+
+  useEffect(() => {
+    const updateRadius = () => {
+      if (window.innerWidth < 768) {
+        setRadius(9);
+      } else {
+        setRadius(12);
+      }
+    };
+
+    updateRadius();
+
+    window.addEventListener("resize", updateRadius);
+
+    return () => {
+      window.removeEventListener("resize", updateRadius);
+    };
+  }, []);
   const angleIncrement = 360 / skillsList.length;
-  const radius = 12;
   return (
-    <div className=" w-full h-full relative animate-spin-slow">
-      <div className="w-max flex items-center justify-center">
+    <div className=" lg:w-full h-full relative animate-spin-slow">
+      <div className="lg:w-max flex items-center justify-center">
         {skillsList.map((skill, index) => {
           const angleRad = (index * angleIncrement * Math.PI) / 180;
           const x = `${radius * Math.cos(angleRad)}rem`;
