@@ -3,6 +3,7 @@
 import Image from "next/image";
 import mainbg from "../../public/images/mainbg.png";
 import HomeContent from "./HomeContent";
+import { HeroHighlight } from "../ui/hero-highlight";
 
 const Homepage = () => {
   return (

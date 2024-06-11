@@ -62,11 +62,11 @@ const MyProjects = () => {
                   />
                 </div>
                 <div className="px-2">
-                  <div className="flex pt-3 w-full gap-2">{project.icons}</div>
+                  <div className="flex py-3 w-full gap-2">{project.icons}</div>
                   <h2 className="font-bold lg:text-xl text-md text-white py-3">
                     {project.title}
                   </h2>
-                  <p className="text-white text-justify">
+                  <p className="text-white tracking-wide leading-6.5">
                     {project.description}
                   </p>
                   <div className="text-white flex gap-5 pt-4">
@@ -101,7 +101,7 @@ const MyProjects = () => {
               {projectsList.slice(4).map((project, index) => (
                 <div
                   key={index}
-                  className={`h-[19rem] w-[25rem] border-[1px] rounded-lg p-3 border-zinc-400 overflow-hidden flex flex-col relative`}
+                  className={`h-[19rem] w-[25rem] border-[1px] rounded-lg p-2 border-zinc-400 overflow-hidden flex flex-col relative`}
                 >
                   <div className="w-full">
                     <Image
@@ -119,7 +119,7 @@ const MyProjects = () => {
                     <h2 className="font-bold lg:text-md text-sm text-white py-1">
                       {project.title}
                     </h2>
-                    <p className="text-white text-xs text-justify">
+                    <p className="text-white text-xs tracking-wide leading-5">
                       {project.description}
                     </p>
                     <div className="text-white flex gap-5 pt-2">

@@ -9,6 +9,7 @@ import { TbBrandThreejs } from "react-icons/tb";
 import { TbBrandRedux } from "react-icons/tb";
 import { SiExpress } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
+import { SiPostman } from "react-icons/si";
 import Image from "next/image";
 
 // Project images
@@ -19,17 +20,23 @@ import weather from "../public/images/weather.png";
 import qrgen from "../public/images/qrgen.png";
 import advisor from "../public/images/Advisor.png";
 import bmical from "../public/images/Bmical.png";
-import LoginSign from "../public/images/Login-signup.png";
+import Livixius from "../public/images/Livixius.png";
 import feedback from "../public/images/Feedback.png";
 import reactico from "../public/images/react.png";
 import materialUi from "../public/images/material ui.png";
+import gsap from "../public/images/gsap.png";
+import wolfkart from "../public/images/Wolfkart thumbnail 2.jpg";
+import css from "../public/images/css-3.png";
+import html from "../public/images/html-5.png";
+import bootstrap from "../public/images/bootstrap.png";
+import rapid from "../public/images/Rapid.png";
 
 export const skillsList = [
   { label: "ReactJs", link: "", icon: <RiReactjsLine />, newTab: false },
   { label: "NextJs", link: "", icon: <SiNextdotjs />, newTab: false },
   { label: "Tailwind ", link: "", icon: <RiTailwindCssFill />, newTab: false },
   { label: "MongoDB", link: "", icon: <SiMongodb />, newTab: false },
-  { label: "ThreeJs", link: "", icon: <TbBrandThreejs />, newTab: false },
+  { label: "Postman", link: "", icon: <SiPostman />, newTab: false },
   { label: "Redux", link: "", icon: <TbBrandRedux />, newTab: false },
   { label: "Bootstrap", link: "", icon: <TbBrandBootstrap />, newTab: false },
   { label: "NodeJs", link: "", icon: <IoLogoNodejs />, newTab: false },
@@ -39,6 +46,18 @@ export const skillsList = [
 ];
 
 export const projectsList = [
+  // E commerce
+  {
+    name: "WOlfkart",
+    image: wolfkart,
+    title: "E Commerce - MERN Stack",
+
+    description:
+      "Developed E-com project using React, MonogoDb, Express js, Node js & jwt for authenticetion, Stripe for payment gateway",
+    weblink: "http://wolfkart.onrender.com",
+    gitlink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
+  },
+  // Body Mechanics
   {
     name: "Body Mechanics",
     image: BodyMech,
@@ -68,13 +87,14 @@ export const projectsList = [
     weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
     gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
+  // Continental hotel
   {
     name: "The Continental",
     image: Continental,
     title: "Hotel Website with Animaiton",
     icons: [
       <Image
-        src={reactico}
+        src={html}
         alt="icon"
         key="reactico"
         width={30}
@@ -83,7 +103,7 @@ export const projectsList = [
         loading="lazy"
       />,
       <Image
-        src={materialUi}
+        src={bootstrap}
         alt="icon"
         key="materialUi"
         width={30}
@@ -93,40 +113,81 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
+      "This Hotel website landing page developed using HTML & Boostrap with animations using CSS.",
     weblink: "https://poovarasan-a.github.io/The-Continental-Hotel/",
     gitlink: "https://github.com/Poovarasan-A/The-Continental-Hotel.git",
   },
+  //Livixius
+  {
+    name: "Livixius HMS",
+    image: Livixius,
+    title: "HMS Company website",
+    icons: [
+      <Image
+        src={html}
+        alt="icon"
+        key="reactico"
+        width={25}
+        height={25}
+        quality={100}
+        loading="lazy"
+      />,
+      <Image
+        src={css}
+        alt="icon"
+        key="reactico"
+        width={25}
+        height={25}
+        quality={100}
+        loading="lazy"
+      />,
+      <Image
+        src={gsap}
+        alt="icon"
+        key="materialUi"
+        width={25}
+        height={25}
+        quality={100}
+        loading="lazy"
+      />,
+    ],
+    description:
+      "This is a Hotel Management System company website, which i developed for livixius start-up technolgies used Pure HTML, CSS & Gsap for animation.",
+    weblink: "https://poovarasan-a.github.io/Livixius-web/",
+    gitlink: "https://github.com/Poovarasan-A/Livixius-web.git",
+  },
+  //brownstone hotel
   {
     name: "Brownstone Hotel",
     image: Brownstone,
     title: "Hotel Website",
     icons: [
       <Image
-        src={reactico}
+        src={html}
         alt="icon"
         key="reactico"
-        width={30}
-        height={30}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
       <Image
-        src={materialUi}
+        src={css}
         alt="icon"
         key="materialUi"
-        width={30}
-        height={30}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
+      "This Hotel website developed using Pure HTML & CSS, it is a basic hotel website.",
     weblink: "https://poovarasan-a.github.io/Hotel-Brownstone/",
     gitlink: "https://github.com/Poovarasan-A/Hotel-Brownstone.git",
   },
   //mini  projects
+  //weather app
   {
     name: "Weather App",
     image: weather,
@@ -136,26 +197,28 @@ export const projectsList = [
         src={reactico}
         alt="icon"
         key="reactico"
-        width={30}
-        height={30}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
       <Image
-        src={materialUi}
+        src={rapid}
         alt="icon"
         key="materialUi"
-        width={30}
-        height={30}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
+      "This weather app developed using React js and rapid Api, we can get current weather details using city based search.",
+    weblink: "https://poovarasan-a.github.io/weather",
+    gitlink:
+      "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/Weather%20App",
   },
+  //qr generator
   {
     name: "QR Generator",
     image: qrgen,
@@ -170,21 +233,14 @@ export const projectsList = [
         quality={100}
         loading="lazy"
       />,
-      <Image
-        src={materialUi}
-        alt="icon"
-        key="materialUi"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
+      "This Qr generator app generate Qr using url with prefferable size, Used technolgies React js & QR Code Api.",
+    weblink: "https://poovarasan-a.github.io/qrgen",
+    gitlink:
+      "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/QR%20Generator",
   },
+  //advisor app
   {
     name: "Advisor App",
     image: advisor,
@@ -199,21 +255,14 @@ export const projectsList = [
         quality={100}
         loading="lazy"
       />,
-      <Image
-        src={materialUi}
-        alt="icon"
-        key="materialUi"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
+      "Developed Advisor app for reading advice quotes, technologies used React js & Advice Slip Api.",
+    weblink: "https://poovarasan-a.github.io/advisor",
+    gitlink:
+      "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/Advisor%20App",
   },
+  //bmi calci
   {
     name: "BMI Calculator",
     image: bmical,
@@ -228,105 +277,40 @@ export const projectsList = [
         quality={100}
         loading="lazy"
       />,
-      <Image
-        src={materialUi}
-        alt="icon"
-        key="materialUi"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
+      "Developed BMI Calculator in React js can calculate BMI by adding age, height, weight.",
+    weblink: "https://poovarasan-a.github.io/bmi",
+    gitlink:
+      "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/BMI%20Calculator",
   },
-  {
-    name: "Login SignUp Page",
-    image: LoginSign,
-    title: "Login & SignUp",
-    icons: [
-      <Image
-        src={reactico}
-        alt="icon"
-        key="reactico"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
-      <Image
-        src={materialUi}
-        alt="icon"
-        key="materialUi"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
-    ],
-    description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "",
-    gitlink: "https://github.com/Poovarasan-A/Login-Signup-.git",
-  },
+  // emoji feedback
   {
     name: "Emoji Feedback",
     image: feedback,
     title: "Emoji Feedback",
     icons: [
       <Image
-        src={reactico}
+        src={html}
         alt="icon"
         key="reactico"
-        width={15}
-        height={15}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
       <Image
-        src={materialUi}
+        src={css}
         alt="icon"
         key="materialUi"
-        width={15}
-        height={15}
+        width={20}
+        height={20}
         quality={100}
         loading="lazy"
       />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
-    weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
-  },
-  {
-    name: "Emoji Feedback",
-    image: feedback,
-    title: "Emoji Feedback",
-    icons: [
-      <Image
-        src={reactico}
-        alt="icon"
-        key="reactico"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
-      <Image
-        src={materialUi}
-        alt="icon"
-        key="materialUi"
-        width={15}
-        height={15}
-        quality={100}
-        loading="lazy"
-      />,
-    ],
-    description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
+      "It's a feedback submiting form using emoji expression developed with technologies HTML, CSS, Javascript.",
     weblink: "https://poovarasan-a.github.io/Feedback-Emoji-/",
     gitlink: "https://github.com/Poovarasan-A/Feedback-Emoji-.git",
   },
