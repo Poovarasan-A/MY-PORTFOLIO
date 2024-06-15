@@ -7,8 +7,8 @@ import { HeroHighlight } from "../ui/hero-highlight";
 
 const Homepage = () => {
   return (
-    <div className="relative w-full h-screen text-white flex justify-center items-center overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center z-0">
+    <section className="relative w-full h-screen text-white flex justify-center items-center overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-screen bg-cover bg-center z-0">
         <Image
           src={mainbg}
           alt="main"
@@ -21,7 +21,7 @@ const Homepage = () => {
         />
       </div>
       <HomeContent />
-    </div>
+    </section>
   );
 };
 

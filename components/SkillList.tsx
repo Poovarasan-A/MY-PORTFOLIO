@@ -5,11 +5,16 @@ import { skillsList } from "../app/data";
 import Link from "next/link";
 
 const SkillList = () => {
-  const [radius, setRadius] = useState(12);
+  const [radius, setRadius] = useState(0);
 
   useEffect(() => {
+    const smallScreen = window.matchMedia("(max-width: 360px)");
+    const mediumScreen = window.matchMedia("(max-width: 768px)");
+
     const updateRadius = () => {
-      if (window.innerWidth < 768) {
+      if (smallScreen.matches) {
+        setRadius(7);
+      } else if (mediumScreen.matches) {
         setRadius(9);
       } else {
         setRadius(12);
@@ -18,15 +23,19 @@ const SkillList = () => {
 
     updateRadius();
 
-    window.addEventListener("resize", updateRadius);
+    smallScreen.addEventListener("change", updateRadius);
+    mediumScreen.addEventListener("change", updateRadius);
 
     return () => {
-      window.removeEventListener("resize", updateRadius);
+      smallScreen.removeEventListener("change", updateRadius);
+      mediumScreen.removeEventListener("change", updateRadius);
     };
   }, []);
+
   const angleIncrement = 360 / skillsList.length;
+
   return (
-    <div className=" lg:w-full h-full relative animate-spin-slow">
+    <div className="lg:w-full h-full relative animate-spin-slow">
       <div className="lg:w-max flex items-center justify-center">
         {skillsList.map((skill, index) => {
           const angleRad = (index * angleIncrement * Math.PI) / 180;
@@ -50,4 +59,5 @@ const SkillList = () => {
     </div>
   );
 };
+
 export default SkillList;

@@ -73,7 +73,7 @@ export const projectsList = [
   {
     name: "Body Mechanics",
     image: BodyMech,
-    title: "Gym Website",
+    title: "Gym Website (Dark & Light Theme)",
     icons: [
       <Image
         src={reactico}
@@ -95,7 +95,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Body Mechanics Gym website was crafted using the React framework, combining robust functionality with a seamless user experience. Leveraging the power of Material UI for styling, the site ensures a visually engaging interface that enhances user interaction.",
+      "This Body Mechanics Gym website was crafted using the React framework, Leveraging the power of Material UI for styling.",
     weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
     gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
@@ -125,7 +125,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Hotel website landing page was handcrafted using HTML and Bootstrap, blending sleek design with responsive layouts. CSS animations were integrated to add a touch of modernity, ensuring visitors are captivated.",
+      "This Hotel website landing page was handcrafted using HTML and Bootstrap, CSS animations were integrated to add a touch of modernity.",
     weblink: "https://poovarasan-a.github.io/The-Continental-Hotel/",
     gitlink: "https://github.com/Poovarasan-A/The-Continental-Hotel.git",
   },
@@ -164,7 +164,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Hotel Management System company website, crafted for Livixius Start-up Technologies, is built entirely using Pure HTML and CSS. To enhance user engagement and visual appeal, animations were meticulously implemented with GSAP.",
+      "This HMS company website, crafted for Start-up, is built entirely using Pure HTML and CSS, animations were meticulously implemented with GSAP.",
     weblink: "https://poovarasan-a.github.io/Livixius-web/",
     gitlink: "https://github.com/Poovarasan-A/Livixius-web.git",
   },
@@ -225,7 +225,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This weather app developed using React js and rapid Api, we can get current weather details using city based search.",
+      "This weather app crafted using React js and rapid Api, it works based on city search.",
     weblink: "https://poovarasan-a.github.io/weather",
     gitlink:
       "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/Weather%20App",
@@ -247,7 +247,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Qr generator app generate Qr using url with prefferable size, Used technolgies React js & QR Code Api.",
+      "This app generate Qr using url with prefferable sizes, Used technolgies React js & QR Code Api.",
     weblink: "https://poovarasan-a.github.io/qrgen",
     gitlink:
       "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/QR%20Generator",
@@ -269,7 +269,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "Developed Advisor app for reading advice quotes, technologies used React js & Advice Slip Api.",
+      "Developed Advisor app for reading advices, using React js & Advice Slip Api.",
     weblink: "https://poovarasan-a.github.io/advisor",
     gitlink:
       "https://github.com/Poovarasan-A/React-small-projects/tree/main/src/Components/Advisor%20App",
@@ -322,7 +322,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "It's a feedback submiting form using emoji expression developed with technologies HTML, CSS, Javascript.",
+      "It's a feedback submiting form using emoji developed with HTML, CSS, Javascript.",
     weblink: "https://poovarasan-a.github.io/Feedback-Emoji-/",
     gitlink: "https://github.com/Poovarasan-A/Feedback-Emoji-.git",
   },

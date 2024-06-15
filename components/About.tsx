@@ -18,11 +18,11 @@ const About = () => {
       className="w-full relative text-white h-screen bg-gradient-to-b flex flex-col items-center justify-center from-[#02030C] to-black z-10"
     >
       <div className="lg:mb-20 mb-14 lg:w-[60%] flex flex-col items-center leading-8">
-        <h1 className="text-center font-bold lg:text-3xl px-[2rem]  text-2xl">
+        <h1 className="text-center font-bold lg:text-3xl px-[2rem]  text-2xl sm:text-3xl">
           Making <span className="text-violet-500 italic">apps</span> with
           modern technologies
         </h1>
-        <h5 className="text-center p-[1rem] text-sm lg:text-md text-wrap mt-5 lg:mt-10 tracking-wider">
+        <h5 className="text-center p-[1rem] lg:text-md text-wrap mt-5 lg:mt-10 tracking-wider">
           <TextFadeAnimation />
         </h5>
       </div>

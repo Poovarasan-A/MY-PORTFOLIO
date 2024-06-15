@@ -11,6 +11,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "320px", // Custom extra small screen
+        sm: "640px", // Custom small screen
+        md: "768px", // Custom medium screen
+        lg: "1024px", // Custom large screen
+        xl: "1280px", // Custom extra large screen
+      },
       backgroundImage: {
         mainbg: "url('/public/images/mainbg.png')",
       },
@@ -36,16 +43,6 @@ const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-// function addVariablesForColors({ addBase, theme }) {
-//   let allColors = flattenColorPalette(theme("colors"));
-//   let newVars = Object.fromEntries(
-//     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-//   );
-
-//   addBase({
-//     ":root": newVars,
-//   });
-// }
 function addVariablesForColors({
   addBase,
   theme,
