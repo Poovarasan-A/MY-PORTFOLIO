@@ -51,10 +51,10 @@ export const projectsList = [
   {
     name: "WOlfkart",
     image: wolfkart,
-    title: "E Commerce - MERN Stack",
+    title: "E Commerce - MERN Stack (with Admin Dashboard)",
 
     description:
-      "Developed E-com project using React, MonogoDb, Express js, Node js & jwt for authenticetion, Stripe for payment gateway",
+      "Developed E-com project using React, MonogoDb, Express js, Node js & jwt for authenticetion, Stripe for payment gateway with admin dashboard.",
     weblink: "http://wolfkart.onrender.com",
     gitlink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
   },
@@ -103,7 +103,7 @@ export const projectsList = [
   {
     name: "The Continental",
     image: Continental,
-    title: "Hotel Website with Animaiton",
+    title: "Hotel Website (with Animaiton using CSS)",
     icons: [
       <Image
         src={html}
@@ -133,7 +133,7 @@ export const projectsList = [
   {
     name: "Livixius HMS",
     image: Livixius,
-    title: "HMS Company website",
+    title: "Company website (Hotel Mangement System)",
     icons: [
       <Image
         src={html}

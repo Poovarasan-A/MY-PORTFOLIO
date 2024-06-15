@@ -72,7 +72,7 @@ const MyProjects = () => {
                   <p className="text-white tracking-wide leading-6.5">
                     {project.description}
                   </p>
-                  <div className="text-white flex flex-col lg:flex-row gap-5 pt-4 lg:pb-0 pb-2">
+                  <div className="text-white flex  gap-5 pt-4 lg:pb-0 pb-2">
                     <Link
                       href={project.gitlink}
                       passHref
