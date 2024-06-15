@@ -15,9 +15,15 @@ const Header = () => {
       </div>
       <div className="hidden lg:flex lg:pr-[10rem]">
         <ul className="flex gap-20">
-          <li className="nav-link">About</li>
-          <li className="nav-link">Projects</li>
-          <li className="nav-link">Contact</li>
+          <li className="nav-link">
+            <a href="#about">About</a>
+          </li>
+          <li className="nav-link">
+            <a href="#project">Projects</a>
+          </li>
+          <li className="nav-link">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </div>
     </div>

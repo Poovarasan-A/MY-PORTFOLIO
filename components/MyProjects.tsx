@@ -32,11 +32,15 @@ const MyProjects = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0%", isMobile ? "-84%" : "-70%"]
+    ["0%", isMobile ? "-86%" : "-70%"]
   );
 
   return (
-    <div className="h-[700vh] relative bg-black z-50" ref={ref}>
+    <section
+      id="projects"
+      className="h-[700vh] relative bg-black z-50"
+      ref={ref}
+    >
       <div className=" flex flex-col sticky h-[90vh] lg:h-screen top-0 pt-5 ">
         <h1 className="text-white text-3xl font-bold text-center lg:mt-2 mt-14">
           My <span className="text-violet-500">Projects</span>
@@ -47,10 +51,10 @@ const MyProjects = () => {
             className="flex gap-20 lg:ml-20 pl-[2rem] items-center scroll-smooth"
           >
             {/*Big Projects */}
-            {projectsList.slice(0, 4).map((project, index) => (
+            {projectsList.slice(0, 5).map((project, index) => (
               <div
                 key={index}
-                className="h-[36rem] lg:w-[42rem] w-[23rem] border-[1px] rounded-2xl lg:p-5 p-2 border-zinc-400 overflow-hidden flex flex-col "
+                className="lg:h-[36rem] lg:w-[42rem] w-[23rem] border-[1px] rounded-2xl lg:p-5 p-2 border-zinc-400 overflow-hidden flex flex-col "
               >
                 <div className=" w-full ">
                   <Image
@@ -62,14 +66,14 @@ const MyProjects = () => {
                   />
                 </div>
                 <div className="px-2">
-                  <div className="flex py-3 w-full gap-2">{project.icons}</div>
-                  <h2 className="font-bold lg:text-xl text-md text-white py-3">
+                  <div className="flex py-2 w-full gap-2">{project.icons}</div>
+                  <h2 className="font-bold lg:text-xl text-xl text-md text-white py-2">
                     {project.title}
                   </h2>
                   <p className="text-white tracking-wide leading-6.5">
                     {project.description}
                   </p>
-                  <div className="text-white flex gap-5 pt-4">
+                  <div className="text-white flex flex-col lg:flex-row gap-5 pt-4 lg:pb-0 pb-2">
                     <Link
                       href={project.gitlink}
                       passHref
@@ -98,7 +102,7 @@ const MyProjects = () => {
             {/* Mini Projects */}
 
             <div className="grid grid-cols-3 gap-4 lg:w-[82vw] w-[300vw]">
-              {projectsList.slice(4).map((project, index) => (
+              {projectsList.slice(5).map((project, index) => (
                 <div
                   key={index}
                   className={`h-[19rem] w-[25rem] border-[1px] rounded-lg p-2 border-zinc-400 overflow-hidden flex flex-col relative`}
@@ -158,7 +162,7 @@ const MyProjects = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

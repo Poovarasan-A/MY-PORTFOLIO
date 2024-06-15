@@ -13,7 +13,10 @@ const defaultAnimation = {
 
 const About = () => {
   return (
-    <div className="w-full relative text-white h-screen bg-gradient-to-b flex flex-col items-center justify-center from-[#02030C] to-black z-10">
+    <section
+      id="about"
+      className="w-full relative text-white h-screen bg-gradient-to-b flex flex-col items-center justify-center from-[#02030C] to-black z-10"
+    >
       <div className="lg:mb-20 mb-14 lg:w-[60%] flex flex-col items-center leading-8">
         <h1 className="text-center font-bold lg:text-3xl px-[2rem]  text-2xl">
           Making <span className="text-violet-500 italic">apps</span> with
@@ -103,7 +106,7 @@ const About = () => {
         </h2>
         <MdKeyboardArrowDown className="text-gray-400 text-2xl animate-bounce" />
       </div>
-    </div>
+    </section>
   );
 };
 export default About;

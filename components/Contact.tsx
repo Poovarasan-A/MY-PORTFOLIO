@@ -45,7 +45,10 @@ const Contact = () => {
     }
   };
   return (
-    <div className="w-screen h-screen flex flex-col relative items-center justify-center text-white bg-black overflow-hidden">
+    <section
+      id="contact"
+      className="w-screen lg:h-screen flex flex-col relative items-center justify-center text-white bg-black overflow-hidden pt-4 lg:pt-0"
+    >
       <div className="absolute top-0 left-0 opacity-30  w-full h-full bg-cover bg-center z-0">
         <Image
           src={circebg}
@@ -69,7 +72,7 @@ const Contact = () => {
             Let&apos;s talk
           </h2>
           <p className="text-xl font-semibold lg:pb-10 pb-5">
-            If you like my projects, just say hi !
+            If you like my works, just say hi !
           </p>
           <div className="flex items-center gap-4 lg:pt-20">
             <FiPhoneCall className="text-violet-500 text-xl" />
@@ -84,7 +87,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={sendEmail}
-            className={`lg:w-[50%] w-full lg:h-[80%] flex flex-col lg:pr-[5rem] px-[2rem] pt-[5rem] justify-center gap-5 transition-opacity duration-500 ${
+            className={`lg:w-[50%] w-full lg:h-[80%] flex flex-col lg:pr-[5rem] px-[2rem] lg:pt-[5rem] py-[3rem] lg:py-0 justify-center gap-5 transition-opacity duration-500 ${
               !showForm ? "opacity-0" : "opacity-100"
             }`}
           >
@@ -166,17 +169,17 @@ const Contact = () => {
             <ImLinkedin className="text-2xl animate-spin-slow-reverse" />
           </Link>
         </div>
-        <div className="flex items-center lg:pb-0 pb-5">
+        <div className="flex items-center lg:py-0 py-5">
           <p>designed by &nbsp;</p>
           <Image
             src={sign}
             alt="sign"
-            className="invert w-[8rem]"
+            className="invert lg:w-[8rem] w-[6rem]"
             loading="lazy"
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Contact;

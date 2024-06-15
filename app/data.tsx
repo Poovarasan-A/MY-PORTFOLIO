@@ -26,6 +26,7 @@ import reactico from "../public/images/react.png";
 import materialUi from "../public/images/material ui.png";
 import gsap from "../public/images/gsap.png";
 import wolfkart from "../public/images/Wolfkart thumbnail 2.jpg";
+import taskeasy from "../public/images/TaskEasy thumbnail.jpg";
 import css from "../public/images/css-3.png";
 import html from "../public/images/html-5.png";
 import bootstrap from "../public/images/bootstrap.png";
@@ -57,6 +58,17 @@ export const projectsList = [
     weblink: "http://wolfkart.onrender.com",
     gitlink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
   },
+  // Task Easy
+  {
+    name: "Task Easy",
+    image: taskeasy,
+    title: "Task Management App - MERN (Next js)",
+
+    description:
+      "Developed Task Management App using Next js, MonogoDb, Express js, Node js & jwt for authenticetion and OAuth using google Authentication",
+    weblink: "http://wolfkart.onrender.com",
+    gitlink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
+  },
   // Body Mechanics
   {
     name: "Body Mechanics",
@@ -83,7 +95,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Body Mechanics Gym website is developed using React framework and for styling Material UI used.",
+      "This Body Mechanics Gym website was crafted using the React framework, combining robust functionality with a seamless user experience. Leveraging the power of Material UI for styling, the site ensures a visually engaging interface that enhances user interaction.",
     weblink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
     gitlink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
@@ -113,7 +125,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This Hotel website landing page developed using HTML & Boostrap with animations using CSS.",
+      "This Hotel website landing page was handcrafted using HTML and Bootstrap, blending sleek design with responsive layouts. CSS animations were integrated to add a touch of modernity, ensuring visitors are captivated.",
     weblink: "https://poovarasan-a.github.io/The-Continental-Hotel/",
     gitlink: "https://github.com/Poovarasan-A/The-Continental-Hotel.git",
   },
@@ -152,7 +164,7 @@ export const projectsList = [
       />,
     ],
     description:
-      "This is a Hotel Management System company website, which i developed for livixius start-up technolgies used Pure HTML, CSS & Gsap for animation.",
+      "This Hotel Management System company website, crafted for Livixius Start-up Technologies, is built entirely using Pure HTML and CSS. To enhance user engagement and visual appeal, animations were meticulously implemented with GSAP.",
     weblink: "https://poovarasan-a.github.io/Livixius-web/",
     gitlink: "https://github.com/Poovarasan-A/Livixius-web.git",
   },
