@@ -62,12 +62,12 @@ export const projectsList = [
   {
     name: "Task Easy",
     image: taskeasy,
-    title: "Task Management App - MERN (Next js)",
+    title: "Task Management App - Next js (OAuth)",
 
     description:
-      "Developed Task Management App using Next js, MonogoDb, Express js, Node js & jwt for authenticetion and OAuth using google Authentication",
-    weblink: "http://wolfkart.onrender.com",
-    gitlink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
+      "Developed Task Management App using Next js with MonogoDb & auth.js for user and third-party authentication (Google & GitHub)",
+    weblink: "https://task-easy-manage.vercel.app/",
+    gitlink: "https://github.com/Poovarasan-A/Task-Easy-Nextjs-Mongodb.git",
   },
   // Body Mechanics
   {
