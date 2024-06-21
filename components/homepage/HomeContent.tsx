@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import SkillList from "../SkillList";
 import profile from "../../public/images/Techguy2.png";
 import TextWriting from "../TextWriting";
+import Link from "next/link";
 
 const HomeContent = () => {
   return (
@@ -28,13 +29,15 @@ const HomeContent = () => {
           I develop scalable, user-interactive web applications
           <br className="lg:flex hidden" />& captivating animated websites
         </p>
-        <button
+        <Link
+          href="/images/Poovarasan Resume.pdf"
           className="bg-violet-600 py-2 px-5 rounded-3xl flex items-center gap-2 font-semibold hover:bg-violet-800"
-          type="button"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Resume
           <FaCloudDownloadAlt className="text-xl animate-bounce" />
-        </button>
+        </Link>
       </div>
       <div className="lg:w-[50%] w-full lg:h-full h-[60%] relative flex flex-col items-center justify-center opacity-[90%] lg:pt-[6rem]">
         <Image

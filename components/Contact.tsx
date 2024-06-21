@@ -76,11 +76,18 @@ const Contact = () => {
           </p>
           <div className="flex items-center gap-4 lg:pt-20">
             <FiPhoneCall className="text-violet-500 text-xl" />
-            <p className="text-md py-5">9500276714</p>
+            <Link href="tel:+919500276714" className="text-md py-5">
+              9500276714
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <LuMail className="text-violet-500 text-xl" />
-            <p className="text-md">poovarasanarumugam1030@gmail.com</p>
+            <Link
+              href="mailto:poovarasanarumugam1030@gmail.com"
+              className="text-md"
+            >
+              poovarasanarumugam1030@gmail.com
+            </Link>
           </div>
         </div>
         {showForm && (
