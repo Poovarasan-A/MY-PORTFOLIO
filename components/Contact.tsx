@@ -49,7 +49,7 @@ const Contact = () => {
       id="contact"
       className="w-screen lg:h-screen flex flex-col relative items-center justify-center text-white bg-black overflow-hidden pt-4 lg:pt-0"
     >
-      <div className="absolute top-0 left-0 opacity-30  w-full h-full bg-cover bg-center z-0">
+      <div className="absolute top-0 left-0 opacity-50 w-full h-full bg-cover bg-center z-0">
         <Image
           src={circebg}
           alt="contact"

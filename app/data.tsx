@@ -13,6 +13,7 @@ import { SiPostman } from "react-icons/si";
 import Image from "next/image";
 
 // Project images
+import GuestRoom from "../public/images/GuestRoom thumbnail.jpg";
 import BodyMech from "../public/images/Body Mechanics gym.png";
 import Continental from "../public/images/conti.png";
 import Brownstone from "../public/images/Brownstone.png";
@@ -47,6 +48,18 @@ export const skillsList = [
 ];
 
 export const projectsList = [
+  // Guest Room App
+  {
+    name: "Guest Room Booking App",
+    image: GuestRoom,
+    title: "Guest Room Booking App - MERN Stack ",
+
+    description:
+      "This App built using the MERN stack MongoDB, Express.js, React.js, Node.js. It allows users to book rooms, manage bookings, and view property details.",
+    weblink: "https://guest-room-booking-application-2yex.onrender.com/",
+    gitlink:
+      "https://github.com/Poovarasan-A/Guest-room-booking-application.git",
+  },
   // E commerce
   {
     name: "WOlfkart",

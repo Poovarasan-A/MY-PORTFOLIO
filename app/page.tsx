@@ -1,17 +1,8 @@
 import Header from "@/components/Header";
 import Homepage from "@/components/homepage/Homepage";
-
-import dynamic from "next/dynamic";
 import About from "../components/About";
-
-const DynamicProjects = dynamic(() => import("../components/MyProjects"), {
-  loading: () => <p>Projects</p>,
-  ssr: false,
-});
-const DynamicContact = dynamic(() => import("../components/Contact"), {
-  loading: () => <p>Contact</p>,
-  ssr: false,
-});
+import MyProjects from "@/components/MyProjects";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -19,8 +10,8 @@ export default function Home() {
       <Header />
       <Homepage />
       <About />
-      <DynamicProjects />
-      <DynamicContact />
+      <MyProjects />
+      <Contact />
     </main>
   );
 }

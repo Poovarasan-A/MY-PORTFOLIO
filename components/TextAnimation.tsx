@@ -15,7 +15,7 @@ export const TextFadeAnimation = () => {
   }, [isInView, mainControls]);
 
   const text =
-    "I'm a skilled developer in TypeScript and JavaScript also expertise in frameworks like React, Node.js, Express.js and Next.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
+    "I'm a skilled developer in JavaScript and TypeScript also expertise in frameworks like React, Node.js, Express.js and Next.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!";
   const words = text.split(" ");
   return (
     <div ref={ref}>
