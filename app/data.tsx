@@ -33,6 +33,11 @@ import html from "../public/images/html-5.png";
 import bootstrap from "../public/images/bootstrap.png";
 import rapid from "../public/images/Rapid.png";
 
+// New Freelance Projects
+import DoctorApp from "../public/images/doctor-appointment.png";
+import InteriorDesign from "../public/images/interiors-designer.png";
+import HotoOffers from "../public/images/hoto-offers.png";
+
 export const skillsList = [
   { label: "ReactJs", link: "", icon: <RiReactjsLine />, newTab: false },
   { label: "NextJs", link: "", icon: <SiNextdotjs />, newTab: false },
@@ -48,6 +53,36 @@ export const skillsList = [
 ];
 
 export const projectsList = [
+  // Hoto Offers Digital Ecosystem
+  {
+    name: "Hoto Offers",
+    image: HotoOffers,
+    title: "Hoto Offers Ecosystem - Official Developer",
+    description:
+      "As the Official Developer, I architected and built the complete Hoto Offers suite. This includes a high-traffic Customer App for discovering hyperlocal deals, a robust Vendor App for real-time offer management, a comprehensive Admin Dashboard with advanced analytics, and a SEO-optimized marketing website.",
+    weblink: "https://hotooffers.com",
+    gitlink: "#",
+  },
+  // Doctor Appointment Booking
+  {
+    name: "Doctor Appointment Booking",
+    image: DoctorApp,
+    title: "Doctor Appointment Booking - Health-tech Solution",
+    description:
+      "A sophisticated health-tech application designed to streamline clinical workflows. It features a real-time appointment booking system, specialized doctor profiles with availability calendars, an automated patient notification system, and a secure medical records management interface for healthcare providers.",
+    weblink: "#",
+    gitlink: "#",
+  },
+  // Interiors Designer Website
+  {
+    name: "Interior Design Portfolio",
+    image: InteriorDesign,
+    title: "Interior Designer Website - High-end Showcase",
+    description:
+      "A luxury web platform tailored for high-end interior designers. It focuses on visual excellence with smooth GSAP animations, high-resolution project galleries, a dynamic consultation inquiry system, and a minimalist design aesthetic that highlights artistic architectural and interior photography.",
+    weblink: "#",
+    gitlink: "#",
+  },
   // Guest Room App
   {
     name: "Guest Room Booking App",
@@ -338,5 +373,29 @@ export const projectsList = [
       "It's a feedback submiting form using emoji developed with HTML, CSS, Javascript.",
     weblink: "https://poovarasan-a.github.io/Feedback-Emoji-/",
     gitlink: "https://github.com/Poovarasan-A/Feedback-Emoji-.git",
+  },
+];
+
+export const reviewsList = [
+  {
+    name: "Ashok Kumar S",
+    role: "CEO, Hoto Offers",
+    review:
+      "Working with Poovarasan was a game-changer for our ecosystem. He didn't just code; he architected a solution that handled our growth seamlessly. His dedication to quality is unmatched.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex",
+  },
+  {
+    name: "M. Arumporai Chemmal",
+    role: "Counselor - Trainer - Family Therapist",
+    review:
+      "The appointment booking system Poovarasan built for us is incredibly intuitive. Our patients love the ease of use, and our staff has seen a 40% reduction in scheduling errors.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah",
+  },
+  {
+    name: "Sabreen Jaffrey",
+    role: "Founder, Inhabyt Atlier Interiors",
+    review:
+      "A true artist in web development. He captured the essence of our luxury brand perfectly. The animations are smooth, and the design is as elegant as the spaces we create.",
+    image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Julian",
   },
 ];

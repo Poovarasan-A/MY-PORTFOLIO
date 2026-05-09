@@ -1,17 +1,73 @@
 "use client";
 
-import { FiPhoneCall } from "react-icons/fi";
-import { LuMail } from "react-icons/lu";
-import { IoSend } from "react-icons/io5";
+import emailjs from "@emailjs/browser";
+import Image from "next/image";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import { motion, type Variants } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { ImLinkedin } from "react-icons/im";
-import Image from "next/image";
-import circebg from "../public/images/bg circle.png";
+import {
+  FiArrowUpRight,
+  FiCheckCircle,
+  FiClock,
+  FiMail,
+  FiMapPin,
+  FiPhoneCall,
+  FiSend,
+} from "react-icons/fi";
+
 import sign from "../public/images/sign.png";
-import Link from "next/link";
-import emailjs from "@emailjs/browser";
-import { useRef, useState } from "react";
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const container: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const contactCards = [
+  {
+    label: "Phone",
+    value: "9500276714",
+    href: "tel:+919500276714",
+    icon: FiPhoneCall,
+  },
+  {
+    label: "Email",
+    value: "poovarasanarumugam1030@gmail.com",
+    href: "mailto:poovarasanarumugam1030@gmail.com",
+    icon: FiMail,
+  },
+  {
+    label: "Location",
+    value: "India, available remotely",
+    href: "#contact",
+    icon: FiMapPin,
+  },
+];
+
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/Poovarasan-A", icon: FaGithub },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/im_darkk_?utm_source=qr&igsh=MWlzZ3drZ3N2cmZuaw==",
+    icon: GrInstagram,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/poovarasan-arumugam-3b798523b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    icon: ImLinkedin,
+  },
+];
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -34,159 +90,214 @@ const Contact = () => {
               setShowForm(true);
               setSuccessMsg(false);
             }, 3000);
-            if (formRef.current) {
-              formRef.current.reset();
-            }
+            formRef.current?.reset();
           },
           (error) => {
             console.log("FAILED...", error.text);
-          }
+          },
         );
     }
   };
+
   return (
     <section
       id="contact"
-      className="w-screen lg:h-screen flex flex-col relative items-center justify-center text-white bg-black overflow-hidden pt-4 lg:pt-0"
+      className="relative overflow-hidden bg-[#020305] py-24 text-white sm:py-28 lg:py-32"
     >
-      <div className="absolute top-0 left-0 opacity-50 w-full h-full bg-cover bg-center z-0">
-        <Image
-          src={circebg}
-          alt="contact"
-          quality={100}
-          fill
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-          loading="lazy"
-        />
-      </div>
-      <div>
-        {/* <h1 className="text-3xl font-bold tracking-wider">
-          Let&apos;s <span className="text-violet-500 text-[2rem]">work </span>
-          together
-        </h1> */}
-      </div>
-      <div className="w-[100%] h-full lg:flex justify-center items-center z-50">
-        <div className="lg:w-[50%] w-full lg:h-[80%] flex flex-col justify-center items-start lg:pl-[5rem] px-[2rem]">
-          <h2 className="lg:text-[4rem] text-[3rem] text-bolder">
-            Let&apos;s talk
-          </h2>
-          <p className="text-xl font-semibold lg:pb-10 pb-5">
-            If you like my works, just say hi !
-          </p>
-          <div className="flex items-center gap-4 lg:pt-20">
-            <FiPhoneCall className="text-violet-500 text-xl" />
-            <Link href="tel:+919500276714" className="text-md py-5">
-              9500276714
-            </Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <LuMail className="text-violet-500 text-xl" />
-            <Link
-              href="mailto:poovarasanarumugam1030@gmail.com"
-              className="text-md"
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
+      <div className="absolute left-1/2 top-0 h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-cyan-400/12 blur-[130px]" />
+      <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-violet-500/12 blur-[120px]" />
+
+      <div className="container relative z-10 mx-auto px-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={container}
+          className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
+        >
+          <div>
+            <motion.div
+              variants={fadeUp}
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200 backdrop-blur"
             >
-              poovarasanarumugam1030@gmail.com
-            </Link>
+              <FiSend />
+              Start a Build
+            </motion.div>
+
+            <motion.h2
+              variants={fadeUp}
+              className="text-balance text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+            >
+              Let&apos;s build something production-grade.
+            </motion.h2>
+
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 max-w-xl text-base leading-8 text-zinc-300 sm:text-lg"
+            >
+              Have a SaaS product, mobile app, dashboard, business system, or
+              automation workflow in mind? I can help shape it, build it, and
+              ship it.
+            </motion.p>
+
+            <motion.div variants={container} className="mt-6 grid gap-3">
+              {contactCards.map(({ label, value, href, icon: Icon }) => (
+                <motion.div key={label} variants={fadeUp}>
+                  <Link
+                    href={href}
+                    className="group flex items-center justify-between gap-4 rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055]"
+                  >
+                    <span className="flex min-w-0 items-center gap-4">
+                      <span className="grid h-11 w-11 flex-none place-items-center rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
+                        <Icon />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                          {label}
+                        </span>
+                        <span className="block truncate text-sm font-semibold text-zinc-200">
+                          {value}
+                        </span>
+                      </span>
+                    </span>
+                    <FiArrowUpRight className="flex-none text-zinc-500 transition group-hover:text-cyan-200" />
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-lg text-zinc-300 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100"
+                >
+                  <Icon />
+                </Link>
+              ))}
+            </motion.div>
           </div>
-        </div>
-        {showForm && (
-          <form
-            ref={formRef}
-            onSubmit={sendEmail}
-            className={`lg:w-[50%] w-full lg:h-[80%] flex flex-col lg:pr-[5rem] px-[2rem] lg:pt-[5rem] py-[3rem] lg:py-0 justify-center gap-5 transition-opacity duration-500 ${
-              !showForm ? "opacity-0" : "opacity-100"
-            }`}
+
+          <motion.div
+            variants={fadeUp}
+            className="rounded-[8px] border border-white/10 bg-white/[0.035] p-4 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-6"
           >
-            <div className="lg:flex gap-8">
-              <div className="flex flex-col w-full gap-4">
-                <label htmlFor="name">Name</label>
-                <input
-                  className="py-3 bg-inherit border-white outline-none border-b-2"
-                  type="text"
-                  placeholder="Your name"
-                  id="name"
-                  name="from_name"
-                  required
-                />
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+                  Project Inquiry
+                </p>
+                <h3 className="mt-2 text-2xl font-bold text-white">
+                  Tell me what you&apos;re building
+                </h3>
               </div>
-              <div className="flex flex-col w-full gap-4 pt-5 lg:pt-0">
-                <label htmlFor="email">Email</label>
-                <input
-                  className="py-3 bg-inherit border-white outline-none border-b-2"
-                  type="email"
-                  placeholder="you@mail.com"
-                  id="email"
-                  name="from_email"
-                  required
-                />
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-semibold text-emerald-100">
+                <FiClock />
+                Fast response
               </div>
             </div>
-            <div className="flex flex-col gap-4 pt-5">
-              <label htmlFor="message">Message</label>
-              <textarea
-                className=" bg-inherit border-white outline-none border-b-2 h-10"
-                placeholder="say something..."
-                id="message"
-                name="message"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="bg-violet-500 flex items-center justify-around w-[7rem] mt-5 px-4 py-2 rounded-lg hover:bg-violet-800"
-            >
-              Send
-              <IoSend className="text-md" />
-            </button>
-          </form>
-        )}
-        {successMsg && (
-          <div className="lg:w-[50%] w-full lg:h-[80%] flex flex-col lg:pr-[5rem] px-[2rem] pt-[5rem] justify-center gap-5">
-            <p className="text-center text-xl font-semibold text-violet-500">
-              Thank you for showing your intrest !<br />
-              I&apos;ll get back to you soon.
-            </p>
+
+            {showForm && (
+              <form
+                ref={formRef}
+                onSubmit={sendEmail}
+                className={`grid gap-5 transition-opacity duration-500 ${!showForm ? "opacity-0" : "opacity-100"}`}
+              >
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <Field label="Name" id="name">
+                    <input
+                      className="w-full border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      type="text"
+                      placeholder="Your name"
+                      id="name"
+                      name="from_name"
+                      required
+                    />
+                  </Field>
+                  <Field label="Email" id="email">
+                    <input
+                      className="w-full border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      type="email"
+                      placeholder="you@mail.com"
+                      id="email"
+                      name="from_email"
+                      required
+                    />
+                  </Field>
+                </div>
+
+                <Field label="Message" id="message">
+                  <textarea
+                    className="min-h-32 lg:min-h-52 w-full resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                    placeholder="Tell me about the product, timeline, stack, or problem..."
+                    id="message"
+                    name="message"
+                  />
+                </Field>
+
+                <button
+                  type="submit"
+                  className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95"
+                >
+                  Send message
+                  <FiSend />
+                </button>
+              </form>
+            )}
+
+            {successMsg && (
+              <div className="grid min-h-64 place-items-center rounded-[8px] border border-emerald-300/20 bg-emerald-300/10 p-8 text-center">
+                <div>
+                  <FiCheckCircle className="mx-auto mb-4 text-4xl text-emerald-200" />
+                  <p className="text-xl font-semibold text-emerald-100">
+                    Thank you for reaching out.
+                  </p>
+                  <p className="mt-2 text-sm text-zinc-300">
+                    I&apos;ll get back to you soon.
+                  </p>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
+
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 sm:flex-row">
+          <div className="flex items-center">
+            <span>Designed and built by&nbsp;</span>
+            <Image
+              src={sign}
+              alt="Poovarasan signature"
+              className="w-24 invert opacity-80"
+              loading="lazy"
+            />
           </div>
-        )}
-      </div>
-      <div className="h-[20%] w-full flex lg:flex-row flex-col items-center justify-around">
-        <div className="flex gap-10 text-violet-500 lg:py-0 py-5">
-          <Link
-            href="https://github.com/Poovarasan-A"
-            className="border-2 border-dotted border-white rounded-full p-3 animate-spin-slow"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="text-2xl animate-spin-slow-reverse" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/im_darkk_?utm_source=qr&igsh=MWlzZ3drZ3N2cmZuaw=="
-            className="border-2 border-dotted border-white rounded-full p-3 animate-spin-slow "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GrInstagram className="text-2xl animate-spin-slow-reverse" />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/poovarasan-arumugam-3b798523b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            className="border-2 border-dotted border-white rounded-full p-3 animate-spin-slow "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ImLinkedin className="text-2xl animate-spin-slow-reverse" />
-          </Link>
-        </div>
-        <div className="flex items-center lg:py-0 py-5">
-          <p>designed by &nbsp;</p>
-          <Image
-            src={sign}
-            alt="sign"
-            className="invert lg:w-[8rem] w-[6rem]"
-            loading="lazy"
-          />
+          <p>Full Stack Developer | Mobile + Web + Backend + Infrastructure</p>
         </div>
       </div>
     </section>
   );
 };
+
+const Field = ({
+  label,
+  id,
+  children,
+}: {
+  label: string;
+  id: string;
+  children: React.ReactNode;
+}) => (
+  <label htmlFor={id} className="block">
+    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+      {label}
+    </span>
+    {children}
+  </label>
+);
+
 export default Contact;
