@@ -87,7 +87,7 @@ const About = () => {
       <div className="absolute left-0 top-1/4 h-96 w-96 rounded-full bg-violet-500/12 blur-[120px]" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-400/10 blur-[120px]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -113,7 +113,7 @@ const About = () => {
 
           <motion.p
             variants={fadeUp}
-            className="text-base leading-8 text-zinc-300 sm:text-lg"
+            className="text-base leading-8 text-justify md:text-left text-zinc-300 sm:text-lg"
           >
             I work like a product-minded engineering partner: planning the
             architecture, shaping user flows, building the frontend and backend,

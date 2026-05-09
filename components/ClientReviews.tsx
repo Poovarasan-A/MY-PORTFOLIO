@@ -46,7 +46,7 @@ const ClientReviews = () => {
       <div className="absolute left-1/2 top-0 h-[28rem] w-[48rem] -translate-x-1/2 rounded-full bg-violet-500/14 blur-[130px]" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-400/10 blur-[120px]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -33,7 +33,7 @@ const orbitItems = [
 
 const HomeContent = () => {
   return (
-    <div className="container relative z-10 mx-auto grid min-h-screen items-center gap-12 px-4 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:pb-0 lg:pt-24">
+    <div className="md:container relative z-10 mx-auto grid min-h-screen items-center gap-12  px-4 pb-16 pt-28 lg:grid-cols-[1.05fr_0.95fr] lg:pb-0 lg:pt-24">
       <motion.div
         initial={{ opacity: 0, y: 28 }}
         animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const HomeContent = () => {
           </span>
         </h1>
 
-        <div className="mt-6 flex min-h-9 flex-wrap items-center gap-3 text-xl font-semibold text-zinc-200 sm:text-2xl">
+        <div className="mt-3 md:mt-6 flex min-h-9 flex-wrap items-center gap-3 text-lg font-semibold text-zinc-200 sm:text-2xl">
           <span>Building</span>
           <TypeAnimation
             sequence={[
@@ -69,7 +69,7 @@ const HomeContent = () => {
           />
         </div>
 
-        <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
+        <p className="md:mt-6 mt-3 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">
           I turn product ideas into deployed systems across frontend, backend,
           mobile apps, dashboards, payments, automation, and infrastructure.
         </p>

@@ -102,13 +102,13 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#020305] py-24 text-white sm:py-28 lg:py-32"
+      className="relative overflow-hidden bg-[#020305] py-20 text-white sm:py-28 lg:py-32"
     >
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
-      <div className="absolute left-1/2 top-0 h-[30rem] w-[52rem] -translate-x-1/2 rounded-full bg-cyan-400/12 blur-[130px]" />
-      <div className="absolute bottom-0 left-0 h-96 w-96 rounded-full bg-violet-500/12 blur-[120px]" />
+      <div className="absolute left-1/2 top-0 h-[30rem] w-[52rem] max-w-full -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[130px]" />
+      <div className="absolute bottom-0 left-0 h-96 w-96 max-w-full rounded-full bg-violet-500/10 blur-[120px]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -116,10 +116,10 @@ const Contact = () => {
           variants={container}
           className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
         >
-          <div>
+          <div className="min-w-0">
             <motion.div
               variants={fadeUp}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200 backdrop-blur"
+              className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-cyan-200 backdrop-blur sm:tracking-[0.28em]"
             >
               <FiSend />
               Start a Build
@@ -127,7 +127,7 @@ const Contact = () => {
 
             <motion.h2
               variants={fadeUp}
-              className="text-balance text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+              className="max-w-2xl text-balance text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
             >
               Let&apos;s build something production-grade.
             </motion.h2>
@@ -146,22 +146,22 @@ const Contact = () => {
                 <motion.div key={label} variants={fadeUp}>
                   <Link
                     href={href}
-                    className="group flex items-center justify-between gap-4 rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055]"
+                    className="group flex min-w-0 items-start justify-between gap-3 rounded-[8px] border border-white/10 bg-white/[0.035] p-3 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:items-center sm:gap-4 sm:p-4"
                   >
-                    <span className="flex min-w-0 items-center gap-4">
-                      <span className="grid h-11 w-11 flex-none place-items-center rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
+                    <span className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-4">
+                      <span className="grid h-10 w-10 flex-none place-items-center rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100 sm:h-11 sm:w-11">
                         <Icon />
                       </span>
-                      <span className="min-w-0">
-                        <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-xs font-semibold uppercase tracking-widest text-zinc-500 sm:tracking-[0.2em]">
                           {label}
                         </span>
-                        <span className="block truncate text-sm font-semibold text-zinc-200">
+                        <span className="block break-all text-sm font-semibold leading-6 text-zinc-200 sm:truncate sm:break-normal">
                           {value}
                         </span>
                       </span>
                     </span>
-                    <FiArrowUpRight className="flex-none text-zinc-500 transition group-hover:text-cyan-200" />
+                    <FiArrowUpRight className="mt-1 flex-none text-zinc-500 transition group-hover:text-cyan-200 sm:mt-0" />
                   </Link>
                 </motion.div>
               ))}
@@ -185,18 +185,18 @@ const Contact = () => {
 
           <motion.div
             variants={fadeUp}
-            className="rounded-[8px] border border-white/10 bg-white/[0.035] p-4 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-6"
+            className="min-w-0 rounded-[8px] border border-white/10 bg-white/[0.035] p-4 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-6"
           >
-            <div className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-5">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200">
+            <div className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-center">
+              <div className="min-w-0">
+                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-200 sm:tracking-[0.24em]">
                   Project Inquiry
                 </p>
-                <h3 className="mt-2 text-2xl font-bold text-white">
+                <h3 className="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">
                   Tell me what you&apos;re building
                 </h3>
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-semibold text-emerald-100">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-semibold text-emerald-100">
                 <FiClock />
                 Fast response
               </div>
@@ -211,7 +211,7 @@ const Contact = () => {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label="Name" id="name">
                     <input
-                      className="w-full border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
                       type="text"
                       placeholder="Your name"
                       id="name"
@@ -221,7 +221,7 @@ const Contact = () => {
                   </Field>
                   <Field label="Email" id="email">
                     <input
-                      className="w-full border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
                       type="email"
                       placeholder="you@mail.com"
                       id="email"
@@ -233,7 +233,7 @@ const Contact = () => {
 
                 <Field label="Message" id="message">
                   <textarea
-                    className="min-h-32 lg:min-h-52 w-full resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                    className="min-h-36 w-full min-w-0 resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300 lg:min-h-52"
                     placeholder="Tell me about the product, timeline, stack, or problem..."
                     id="message"
                     name="message"
@@ -242,7 +242,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95 sm:w-fit"
                 >
                   Send message
                   <FiSend />
@@ -251,7 +251,7 @@ const Contact = () => {
             )}
 
             {successMsg && (
-              <div className="grid min-h-64 place-items-center rounded-[8px] border border-emerald-300/20 bg-emerald-300/10 p-8 text-center">
+              <div className="grid min-h-56 place-items-center rounded-[8px] border border-emerald-300/20 bg-emerald-300/10 p-6 text-center sm:min-h-64 sm:p-8">
                 <div>
                   <FiCheckCircle className="mx-auto mb-4 text-4xl text-emerald-200" />
                   <p className="text-xl font-semibold text-emerald-100">
@@ -266,17 +266,19 @@ const Contact = () => {
           </motion.div>
         </motion.div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-zinc-500 sm:flex-row">
-          <div className="flex items-center">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-center text-sm leading-6 text-zinc-500 sm:mt-14 lg:flex-row lg:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start">
             <span>Designed and built by&nbsp;</span>
             <Image
               src={sign}
               alt="Poovarasan signature"
-              className="w-24 invert opacity-80"
+              className="w-20 invert opacity-80 sm:w-24"
               loading="lazy"
             />
           </div>
-          <p>Full Stack Developer | Mobile + Web + Backend + Infrastructure</p>
+          <p className="max-w-full break-words">
+            Full Stack Developer | Mobile + Web + Backend + Infrastructure
+          </p>
         </div>
       </div>
     </section>

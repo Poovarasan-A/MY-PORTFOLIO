@@ -38,6 +38,7 @@ import {
 } from "react-icons/si";
 
 import DoctorApp from "../public/images/doctor-appointment.png";
+import BodyMech from "../public/images/Body Mechanics gym.png";
 import GuestRoom from "../public/images/GuestRoom thumbnail.jpg";
 import HotoOffers from "../public/images/hoto-offers.png";
 import InteriorDesign from "../public/images/interiors-designer.png";
@@ -218,6 +219,13 @@ const caseStudies: Project[] = [
 
 const otherProjects = [
   {
+    title: "Body Mechanics Gym Website",
+    image: BodyMech,
+    meta: "React gym website with dark and light theme using Material UI",
+    liveLink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
+    githubLink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
+  },
+  {
     title: "Task Management App",
     image: TaskEasy,
     meta: "Next.js, MongoDB, OAuth, productivity workflows",
@@ -295,7 +303,7 @@ const MyProjects = () => {
       <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_top,rgba(125,92,255,0.26),transparent_65%)]" />
       <div className="absolute inset-x-0 bottom-0 h-80 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.14),transparent_68%)]" />
 
-      <div className="container relative z-10 mx-auto px-4">
+      <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
