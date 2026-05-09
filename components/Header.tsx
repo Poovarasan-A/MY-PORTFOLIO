@@ -10,6 +10,8 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
+const portfolioV1Link = "https://poovarasan-arumugam.vercel.app/";
+
 const Header = () => {
   return (
     <motion.header
@@ -45,13 +47,23 @@ const Header = () => {
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95"
-        >
-          Build With Me
-          <FiArrowUpRight />
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={portfolioV1Link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-zinc-300 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100 sm:inline-flex"
+          >
+            v1
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95"
+          >
+            Build With Me
+            <FiArrowUpRight />
+          </a>
+        </div>
       </div>
     </motion.header>
   );
