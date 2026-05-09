@@ -5,6 +5,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const navItems = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Proof", href: "#reviews" },
   { label: "Contact", href: "#contact" },

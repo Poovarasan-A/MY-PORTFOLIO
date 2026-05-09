@@ -256,12 +256,42 @@ const otherProjects = [
 ];
 
 const capabilities = [
-  { label: "Mobile + Web", icon: FiSmartphone },
-  { label: "Backend Architecture", icon: FiCpu },
-  { label: "Dashboards", icon: FiBarChart2 },
-  { label: "Payments", icon: FiZap },
-  { label: "Databases", icon: FiDatabase },
-  { label: "Deployment", icon: FiExternalLink },
+  {
+    label: "Mobile + Web",
+    icon: FiSmartphone,
+    description:
+      "Developed production-grade mobile apps and modern web platforms with scalable user experiences across multiple devices.",
+  },
+  {
+    label: "Backend Architecture",
+    icon: FiCpu,
+    description:
+      "Designed APIs, business workflows, authentication systems, and scalable backend infrastructures for real-world applications.",
+  },
+  {
+    label: "Dashboards",
+    icon: FiBarChart2,
+    description:
+      "Built enterprise admin dashboards for analytics, transactions, property management, bookings, and operational workflows.",
+  },
+  {
+    label: "Payments",
+    icon: FiZap,
+    description:
+      "Integrated secure payment systems, booking payments, payout workflows, refunds, and automated transaction handling.",
+  },
+  {
+    label: "Databases",
+    icon: FiDatabase,
+    description:
+      "Worked extensively with MongoDB and DynamoDB for scalable data modeling, real-time systems, and optimized queries.",
+  },
+  {
+    label: "Deployment",
+    icon: FiExternalLink,
+    description:
+      "Managed production deployments, Play Store releases, cloud hosting, performance optimization, and long-term maintenance.",
+  },
 ];
 
 const fadeUp: Variants = {
@@ -323,7 +353,7 @@ const MyProjects = () => {
             variants={fadeUp}
             className="text-balance text-3xl font-bold leading-[0.95] tracking-normal text-white sm:text-4xl lg:text-5xl"
           >
-            Selected{" "}
+            Freelance{" "}
             <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-emerald-200 bg-clip-text text-transparent">
               Works
             </span>
@@ -380,17 +410,18 @@ const MyProjects = () => {
               variants={container}
               className="grid gap-4 md:grid-cols-3"
             >
-              {capabilities.map(({ label, icon: Icon }) => (
+              {capabilities.map(({ label, icon: Icon, description }) => (
                 <motion.div
                   key={label}
                   variants={fadeUp}
                   className="group rounded-[8px] border border-white/10 bg-white/[0.035] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.06]"
                 >
-                  <Icon className="mb-4 text-2xl text-cyan-200" />
+                  <Icon className="mb-4 text-2xl text-cyan-200 transition-transform duration-300 group-hover:scale-110" />
+
                   <p className="text-sm font-semibold text-white">{label}</p>
+
                   <p className="mt-2 text-xs leading-5 text-zinc-400">
-                    Built from planning to production with product, performance,
-                    and operations in mind.
+                    {description}
                   </p>
                 </motion.div>
               ))}

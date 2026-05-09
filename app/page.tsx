@@ -4,6 +4,7 @@ import About from "../components/About";
 import MyProjects from "@/components/MyProjects";
 import ClientReviews from "@/components/ClientReviews";
 import Contact from "@/components/Contact";
+import ProfessionalExperience from "@/components/ProfessionalExperience";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Header />
       <Homepage />
       <About />
+      <ProfessionalExperience />
       <MyProjects />
       <ClientReviews />
       <Contact />
