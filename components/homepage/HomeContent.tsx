@@ -18,7 +18,7 @@ import profile from "../../public/images/Techguy2.png";
 
 const heroStats = [
   { value: "2+", label: "Years industry experience" },
-  { value: "10+", label: "Products and systems shipped" },
+  { value: "6+", label: "Products and systems shipped" },
   { value: "100%", label: "Solo product ownership" },
 ];
 
