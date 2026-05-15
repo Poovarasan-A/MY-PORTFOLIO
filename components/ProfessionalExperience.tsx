@@ -65,7 +65,7 @@ const experienceStack = [
 const companyDetails = {
   name: "Xlorit Innovations Pvt Ltd",
   role: "Software Engineer",
-  duration: "2 Years Experience",
+  duration: "~2 Years Experience",
   type: "Product Engineering / SaaS Delivery",
   location: "Coimbatore, Tamilnadu",
   team: "Frontend, dashboards, APIs, serverless workflows",
@@ -317,7 +317,7 @@ const ExperienceOverview = () => (
   >
     <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-cyan-300 via-violet-300 to-emerald-300" />
     <div className="absolute right-0 top-0 h-72 w-72 bg-cyan-400/10 blur-3xl" />
-    <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
+    <div className="grid gap-8 lg:grid-cols-1 lg:items-start">
       <div>
         <div className="mb-5 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
@@ -357,7 +357,7 @@ const ExperienceOverview = () => (
           })}
         </div>
       </div>
-      <CompanyProjects />
+      {/* <CompanyProjects /> */}
     </div>
   </motion.article>
 );
