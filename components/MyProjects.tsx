@@ -46,6 +46,7 @@ import TaskEasy from "../public/images/TaskEasy thumbnail.jpg";
 import Wolfkart from "../public/images/Wolfkart thumbnail 2.jpg";
 import Livixius from "../public/images/Livixius.png";
 import Rapid from "../public/images/Rapid.png";
+import realestate from "../public/images/real-estate.png";
 
 type Project = {
   title: string;
@@ -219,23 +220,34 @@ const caseStudies: Project[] = [
 
 const otherProjects = [
   {
+    title: "Real Estate Website",
+    image: realestate,
+    meta: "Property showcase platform with lead generation, enquiry forms, mobile-first design, and SEO-focused pages for real estate businesses.",
+    tech: "Next.js, Tailwind CSS, Framer Motion",
+    liveLink: "https://millionairelandmarkrealtor.com",
+    githubLink: "",
+  },
+  {
     title: "Body Mechanics Gym Website",
     image: BodyMech,
-    meta: "React gym website with dark and light theme using Material UI",
+    meta: "Modern fitness website featuring membership plans, trainer information, workout programs, and engaging user experience.",
+    tech: "React, Material UI",
     liveLink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
     githubLink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
   {
     title: "Task Management App",
     image: TaskEasy,
-    meta: "Next.js, MongoDB, OAuth, productivity workflows",
+    meta: "Productivity platform for managing tasks, tracking progress, organizing workflows, and improving team collaboration.",
+    tech: "Next.js, MongoDB, OAuth",
     liveLink: "https://task-easy-manage.vercel.app/",
     githubLink: "https://github.com/Poovarasan-A/Task-Easy-Nextjs-Mongodb.git",
   },
   {
     title: "Guest Booking App",
     image: GuestRoom,
-    meta: "MERN booking system with property and reservation flows",
+    meta: "Online reservation system allowing users to browse properties, check availability, and manage bookings seamlessly.",
+    tech: "MERN Stack",
     liveLink: "https://guest-room-booking-application-2yex.onrender.com/",
     githubLink:
       "https://github.com/Poovarasan-A/Guest-room-booking-application.git",
@@ -243,14 +255,16 @@ const otherProjects = [
   {
     title: "Tech Company Websites",
     image: Livixius,
-    meta: "Modern startup sites, motion systems, responsive layouts",
+    meta: "Professional corporate websites designed to showcase services, build credibility, and generate qualified leads.",
+    tech: "React, Tailwind CSS",
     liveLink: "https://poovarasan-a.github.io/Livixius-web/",
     githubLink: "https://github.com/Poovarasan-A/Livixius-web.git",
   },
   {
     title: "Business Websites",
     image: Rapid,
-    meta: "Lead-focused websites for brands and local companies",
+    meta: "Custom websites for local businesses focused on online presence, customer engagement, and lead conversion.",
+    tech: "React, Next.js",
     liveLink: dummyLiveLink,
   },
 ];
@@ -769,7 +783,18 @@ const OtherProjects = () => (
             <p className="mt-2 text-xs leading-5 text-zinc-400">
               {project.meta}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {project.tech.split(",").map((t) => (
+                <span
+                  key={t.trim()}
+                  className="inline-flex items-center gap-1 rounded-full border border-cyan-300/20 bg-cyan-300/[0.07] px-2.5 py-1 text-[10px] font-semibold text-cyan-200"
+                >
+                  <FiCode className="text-[9px]" />
+                  {t.trim()}
+                </span>
+              ))}
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
               {project.githubLink && (
                 <Link
                   href={project.githubLink}
