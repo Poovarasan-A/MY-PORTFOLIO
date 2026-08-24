@@ -155,7 +155,7 @@ const caseStudies: Project[] = [
     ],
     accent: "from-sky-400 via-teal-300 to-lime-300",
     icon: FiCalendar,
-    liveLink: "https://ahamalar.com",
+    liveLink: "https://ahamalar.netlify.app/",
   },
   {
     title: "Interior Design Website",
