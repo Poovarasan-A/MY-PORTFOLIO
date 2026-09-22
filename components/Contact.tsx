@@ -110,11 +110,11 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#020305] py-20 text-white sm:py-28 lg:py-32"
+      className="relative overflow-hidden bg-slate-50 py-20 text-zinc-900 transition-colors duration-300 dark:bg-[#020305] dark:text-white sm:py-28 lg:py-32"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
-      <div className="absolute left-1/2 top-0 h-[30rem] w-[52rem] max-w-full -translate-x-1/2 rounded-full bg-cyan-400/10 blur-[130px]" />
-      <div className="absolute bottom-0 left-0 h-96 w-96 max-w-full rounded-full bg-violet-500/10 blur-[120px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:48px_48px] opacity-50 dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] dark:opacity-30" />
+      <div className="absolute left-1/2 top-0 h-[30rem] w-[52rem] max-w-full -translate-x-1/2 rounded-full bg-cyan-400/8 blur-[130px] dark:bg-cyan-400/10" />
+      <div className="absolute bottom-0 left-0 h-96 w-96 max-w-full rounded-full bg-violet-500/8 blur-[120px] dark:bg-violet-500/10" />
 
       <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
@@ -127,7 +127,7 @@ const Contact = () => {
           <div className="min-w-0">
             <motion.div
               variants={fadeUp}
-              className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-cyan-200 backdrop-blur sm:tracking-[0.28em]"
+              className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-cyan-700 backdrop-blur dark:border-white/10 dark:bg-white/[0.04] dark:text-cyan-200 sm:tracking-[0.28em]"
             >
               <FiSend />
               Initiate a Project
@@ -135,14 +135,14 @@ const Contact = () => {
 
             <motion.h2
               variants={fadeUp}
-              className="max-w-2xl text-balance text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
+              className="max-w-2xl text-balance text-3xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-4xl lg:text-5xl"
             >
               Let&apos;s build something production-grade.
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="mt-6 max-w-xl text-base leading-8 text-zinc-300 sm:text-lg"
+              className="mt-6 max-w-xl text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg"
             >
               Have a web platform, mobile application, custom software, e-commerce storefront,
               or SaaS product in mind? Reach out to discuss architectural direction, timelines,
@@ -154,22 +154,22 @@ const Contact = () => {
                 <motion.div key={label} variants={fadeUp}>
                   <Link
                     href={href}
-                    className="group flex min-w-0 items-start justify-between gap-3 rounded-[8px] border border-white/10 bg-white/[0.035] p-3.5 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:items-center sm:gap-4 sm:p-4"
+                    className="group flex min-w-0 items-start justify-between gap-3 rounded-[8px] border border-zinc-200/90 bg-white/80 p-3.5 shadow-sm backdrop-blur-xl transition hover:border-cyan-500/40 hover:bg-white hover:shadow-md dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.055] sm:items-center sm:gap-4 sm:p-4"
                   >
                     <span className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-4">
-                      <span className="grid h-10 w-10 flex-none place-items-center rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100 sm:h-11 sm:w-11">
+                      <span className="grid h-10 w-10 flex-none place-items-center rounded-[8px] border border-cyan-500/25 bg-cyan-500/10 text-cyan-700 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-100 sm:h-11 sm:w-11">
                         <Icon />
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block text-xs font-semibold uppercase tracking-widest text-zinc-500 sm:tracking-[0.2em]">
                           {label}
                         </span>
-                        <span className="block break-all text-sm font-semibold leading-6 text-zinc-200 sm:truncate sm:break-normal">
+                        <span className="block break-all text-sm font-semibold leading-6 text-zinc-900 dark:text-zinc-200 sm:truncate sm:break-normal">
                           {value}
                         </span>
                       </span>
                     </span>
-                    <FiArrowUpRight className="mt-1 flex-none text-zinc-500 transition group-hover:text-cyan-200 sm:mt-0" />
+                    <FiArrowUpRight className="mt-1 flex-none text-zinc-400 transition group-hover:text-cyan-600 dark:text-zinc-500 dark:group-hover:text-cyan-200 sm:mt-0" />
                   </Link>
                 </motion.div>
               ))}
@@ -183,7 +183,7 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-lg text-zinc-300 transition hover:border-cyan-300/40 hover:bg-cyan-300/10 hover:text-cyan-100"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-zinc-200 bg-white text-lg text-zinc-700 shadow-sm transition hover:border-cyan-500/40 hover:bg-cyan-50 hover:text-cyan-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300 dark:shadow-none dark:hover:border-cyan-300/40 dark:hover:bg-cyan-300/10 dark:hover:text-cyan-100"
                 >
                   <Icon />
                 </Link>
@@ -193,18 +193,18 @@ const Contact = () => {
 
           <motion.div
             variants={fadeUp}
-            className="min-w-0 rounded-[8px] border border-white/10 bg-white/[0.035] p-5 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-7"
+            className="min-w-0 rounded-[8px] border border-zinc-200/90 bg-white/90 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.06)] backdrop-blur-2xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-[0_35px_120px_rgba(0,0,0,0.38)] sm:p-7"
           >
-            <div className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-center">
+            <div className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-zinc-200/80 pb-5 dark:border-white/10 sm:flex-row sm:items-center">
               <div className="min-w-0">
-                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-200 sm:tracking-[0.24em]">
+                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-700 dark:text-cyan-200 sm:tracking-[0.24em]">
                   Project Inquiry
                 </p>
-                <h3 className="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">
+                <h3 className="mt-2 text-xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-2xl">
                   Tell us what you&apos;re building
                 </h3>
               </div>
-              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-100">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-semibold text-emerald-700 dark:border-emerald-300/20 dark:bg-emerald-300/10 dark:text-emerald-100">
                 <FiClock />
                 Prompt Response
               </div>
@@ -225,8 +225,8 @@ const Contact = () => {
                       onClick={() => setSelectedType(type)}
                       className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
                         isSelected
-                          ? "border border-cyan-400 bg-cyan-400/20 text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.25)]"
-                          : "border border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:text-white"
+                          ? "border border-cyan-500 bg-cyan-500/15 text-cyan-800 shadow-sm dark:border-cyan-400 dark:bg-cyan-400/20 dark:text-cyan-100 dark:shadow-[0_0_16px_rgba(34,211,238,0.25)]"
+                          : "border border-zinc-200 bg-zinc-50 text-zinc-600 hover:border-zinc-300 hover:text-zinc-900 dark:border-white/10 dark:bg-white/[0.03] dark:text-zinc-400 dark:hover:border-white/20 dark:hover:text-white"
                       }`}
                     >
                       {type}
@@ -247,7 +247,7 @@ const Contact = () => {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label="Name / Company" id="name">
                     <input
-                      className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      className="w-full min-w-0 border-b border-zinc-200 bg-transparent py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-cyan-500 dark:border-white/15 dark:text-white dark:placeholder:text-zinc-600 dark:focus:border-cyan-300"
                       type="text"
                       placeholder="Your name or organization"
                       id="name"
@@ -257,7 +257,7 @@ const Contact = () => {
                   </Field>
                   <Field label="Work Email" id="email">
                     <input
-                      className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
+                      className="w-full min-w-0 border-b border-zinc-200 bg-transparent py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-cyan-500 dark:border-white/15 dark:text-white dark:placeholder:text-zinc-600 dark:focus:border-cyan-300"
                       type="email"
                       placeholder="name@company.com"
                       id="email"
@@ -269,7 +269,7 @@ const Contact = () => {
 
                 <Field label="Project Scope & Requirements" id="message">
                   <textarea
-                    className="min-h-36 w-full min-w-0 resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300 lg:min-h-44"
+                    className="min-h-36 w-full min-w-0 resize-none border-b border-zinc-200 bg-transparent py-3 text-sm text-zinc-900 outline-none transition placeholder:text-zinc-400 focus:border-cyan-500 dark:border-white/15 dark:text-white dark:placeholder:text-zinc-600 dark:focus:border-cyan-300 lg:min-h-44"
                     placeholder={`Tell us about the project goals, tech preferences, timeline, or challenges...`}
                     id="message"
                     name="message"
@@ -279,7 +279,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95 sm:w-fit"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 active:scale-95 dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-cyan-100 sm:w-fit"
                 >
                   Submit Inquiry
                   <FiSend />
@@ -288,13 +288,13 @@ const Contact = () => {
             )}
 
             {successMsg && (
-              <div className="grid min-h-56 place-items-center rounded-[8px] border border-emerald-300/20 bg-emerald-300/10 p-6 text-center sm:min-h-64 sm:p-8">
+              <div className="grid min-h-56 place-items-center rounded-[8px] border border-emerald-500/30 bg-emerald-500/10 p-6 text-center dark:border-emerald-300/20 dark:bg-emerald-300/10 sm:min-h-64 sm:p-8">
                 <div>
-                  <FiCheckCircle className="mx-auto mb-4 text-4xl text-emerald-200" />
-                  <p className="text-xl font-semibold text-emerald-100">
+                  <FiCheckCircle className="mx-auto mb-4 text-4xl text-emerald-600 dark:text-emerald-200" />
+                  <p className="text-xl font-semibold text-emerald-800 dark:text-emerald-100">
                     Thank you for reaching out.
                   </p>
-                  <p className="mt-2 text-sm text-zinc-300">
+                  <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
                     The NexVulf team will review your requirements and respond promptly.
                   </p>
                 </div>
@@ -304,50 +304,50 @@ const Contact = () => {
         </motion.div>
 
         {/* Corporate Studio Footer */}
-        <div className="mt-24 border-t border-white/10 pt-12">
+        <div className="mt-24 border-t border-zinc-200 pt-12 dark:border-white/10">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
             <div>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-cyan-400/40 bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-emerald-500/20 text-base font-black tracking-wider text-cyan-200">
+                <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-cyan-500/30 bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-emerald-500/20 text-base font-black tracking-wider text-cyan-700 dark:border-cyan-400/40 dark:text-cyan-200">
                   NV
                 </div>
                 <div>
-                  <span className="text-base font-bold tracking-tight text-white">
+                  <span className="text-base font-bold tracking-tight text-zinc-900 dark:text-white">
                     NexVulf
                   </span>{" "}
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-600 dark:text-cyan-300">
                     Technologies
                   </span>
                 </div>
               </div>
-              <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-400">
+              <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-600 dark:text-zinc-400">
                 A modern technology studio building websites, mobile applications,
                 custom software, e-commerce storefronts, and SaaS platforms.
               </p>
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-800 dark:text-zinc-300">
                 Navigation
               </p>
-              <ul className="mt-4 space-y-2.5 text-sm text-zinc-400">
+              <ul className="mt-4 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400">
                 <li>
-                  <a href="#services" className="transition hover:text-cyan-300">
+                  <a href="#services" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
                     Services & Capabilities
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" className="transition hover:text-cyan-300">
+                  <a href="#projects" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
                     Selected Work & Case Studies
                   </a>
                 </li>
                 <li>
-                  <a href="#reviews" className="transition hover:text-cyan-300">
+                  <a href="#reviews" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
                     Client Testimonials
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="transition hover:text-cyan-300">
+                  <a href="#contact" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
                     Initiate a Project
                   </a>
                 </li>
@@ -355,10 +355,10 @@ const Contact = () => {
             </div>
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-800 dark:text-zinc-300">
                 Capabilities
               </p>
-              <ul className="mt-4 space-y-2.5 text-sm text-zinc-400">
+              <ul className="mt-4 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400">
                 <li>Full-Stack Web Applications</li>
                 <li>Cross-Platform Mobile Apps</li>
                 <li>Shopify & Custom Storefronts</li>
@@ -368,7 +368,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-zinc-500 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-200/80 pt-8 text-xs text-zinc-500 dark:border-white/5 sm:flex-row">
             <p>
               © {new Date().getFullYear()} NexVulf Technologies. All rights reserved.
             </p>

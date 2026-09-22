@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,8 +53,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Prevent theme flash before hydration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (stored === 'dark' || (!stored && prefersDark) || !stored) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+
         {/* Microsoft Clarity */}
         <script
           type="text/javascript"
@@ -90,9 +110,11 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.className} bg-black overflow-x-hidden scrollbar-hidden`}
+        className={`${inter.className} bg-slate-50 dark:bg-[#020305] text-zinc-900 dark:text-white transition-colors duration-300 overflow-x-hidden scrollbar-hidden`}
       >
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <SpeedInsights />
       </body>
     </html>

@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="w-full min-h-screen overflow-x-hidden bg-[#020305]">
+    <main className="w-full min-h-screen overflow-x-hidden bg-slate-50 dark:bg-[#020305] text-zinc-900 dark:text-white transition-colors duration-300">
       <Header />
       <Homepage />
       <About />

@@ -330,15 +330,15 @@ const MyProjects = () => {
         mouseX.set(event.clientX - rect.left);
         mouseY.set(event.clientY - rect.top);
       }}
-      className="relative w-full overflow-hidden bg-[#020305] py-24 text-white sm:py-28 lg:py-32"
+      className="relative w-full overflow-hidden bg-slate-50 py-24 text-zinc-900 transition-colors duration-300 dark:bg-[#020305] dark:text-white sm:py-28 lg:py-32"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:48px_48px] opacity-50 dark:bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] dark:opacity-30" />
       <motion.div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 opacity-40 dark:opacity-100"
         style={{ background: spotlight }}
       />
-      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_top,rgba(125,92,255,0.26),transparent_65%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-80 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.14),transparent_68%)]" />
+      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_top,rgba(125,92,255,0.12),transparent_65%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(125,92,255,0.26),transparent_65%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-80 bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.08),transparent_68%)] dark:bg-[radial-gradient(ellipse_at_bottom,rgba(16,185,129,0.14),transparent_68%)]" />
 
       <div className="md:container relative z-10 mx-auto px-4">
         <motion.div
@@ -350,7 +350,7 @@ const MyProjects = () => {
         >
           <motion.div
             variants={fadeUp}
-            className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-cyan-200 shadow-[0_0_32px_rgba(34,211,238,0.12)]"
+            className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.32em] text-cyan-700 shadow-sm dark:border-white/10 dark:bg-white/[0.04] dark:text-cyan-200 dark:shadow-[0_0_32px_rgba(34,211,238,0.12)]"
           >
             <FiCode className="text-base" />
             Production Case Studies
@@ -358,17 +358,17 @@ const MyProjects = () => {
 
           <motion.h1
             variants={fadeUp}
-            className="text-balance text-3xl font-bold leading-[0.95] tracking-normal text-white sm:text-4xl lg:text-5xl"
+            className="text-balance text-3xl font-bold leading-[0.95] tracking-normal text-zinc-900 dark:text-white sm:text-4xl lg:text-5xl"
           >
             Platforms{" "}
-            <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-emerald-200 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-600 via-violet-600 to-emerald-600 dark:from-cyan-200 dark:via-violet-200 dark:to-emerald-200 bg-clip-text text-transparent">
               & Systems We&apos;ve Built
             </span>
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-8 text-zinc-300 sm:text-lg"
+            className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg"
           >
             High-impact applications, multi-surface platforms, custom
             storefronts, and specialized software engineered for real-world
@@ -383,7 +383,7 @@ const MyProjects = () => {
               <motion.span
                 key={label}
                 variants={fadeUp}
-                className="rounded-full border border-white/10 bg-zinc-950/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-300 backdrop-blur"
+                className="rounded-full border border-zinc-200/90 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-700 shadow-sm backdrop-blur dark:border-white/10 dark:bg-zinc-950/60 dark:text-zinc-300 dark:shadow-none"
               >
                 {label}
               </motion.span>
@@ -392,14 +392,14 @@ const MyProjects = () => {
         </motion.div>
 
         <div className="mt-16 grid gap-5 lg:grid-cols-[180px_1fr] lg:items-start">
-          <nav className="sticky top-24 hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-2 backdrop-blur-xl lg:block">
+          <nav className="sticky top-24 hidden rounded-[8px] border border-zinc-200/90 bg-white/80 p-2 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none lg:block">
             {caseStudies.map((project, index) => (
               <a
                 key={project.title}
                 href={`#case-${index}`}
-                className="group flex items-center gap-3 rounded-[8px] px-3 py-3 text-left text-sm text-zinc-400 transition hover:bg-white/[0.06] hover:text-white"
+                className="group flex items-center gap-3 rounded-[8px] px-3 py-3 text-left text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/[0.06] dark:hover:text-white"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-zinc-600 transition group-hover:bg-cyan-300" />
+                <span className="h-1.5 w-1.5 rounded-full bg-zinc-400 transition group-hover:bg-cyan-500 dark:bg-zinc-600 dark:group-hover:bg-cyan-300" />
                 <span>{project.title.replace(" Platform", "")}</span>
               </a>
             ))}
@@ -422,13 +422,13 @@ const MyProjects = () => {
                 <motion.div
                   key={label}
                   variants={fadeUp}
-                  className="group rounded-[8px] border border-white/10 bg-white/[0.035] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.06]"
+                  className="group rounded-[8px] border border-zinc-200/90 bg-white/80 p-5 shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white hover:shadow-md dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none dark:hover:border-cyan-300/30 dark:hover:bg-white/[0.06]"
                 >
-                  <Icon className="mb-4 text-2xl text-cyan-200 transition-transform duration-300 group-hover:scale-110" />
+                  <Icon className="mb-4 text-2xl text-cyan-600 transition-transform duration-300 group-hover:scale-110 dark:text-cyan-200" />
 
-                  <p className="text-sm font-semibold text-white">{label}</p>
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-white">{label}</p>
 
-                  <p className="mt-2 text-xs leading-5 text-zinc-400">
+                  <p className="mt-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
                     {description}
                   </p>
                 </motion.div>
@@ -476,28 +476,28 @@ const FeaturedCaseStudy = ({
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="group relative overflow-hidden rounded-[8px] border border-white/10 bg-zinc-950/70 shadow-[0_40px_120px_rgba(0,0,0,0.55)] backdrop-blur-2xl"
+      className="group relative overflow-hidden rounded-[8px] border border-zinc-200/90 bg-white/90 shadow-[0_20px_60px_rgba(0,0,0,0.06)] backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950/70 dark:shadow-[0_40px_120px_rgba(0,0,0,0.55)]"
     >
       <div
         className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${project.accent}`}
       />
-      <div className="absolute right-0 top-0 h-72 w-72 bg-cyan-400/10 blur-3xl" />
+      <div className="absolute right-0 top-0 h-72 w-72 bg-cyan-500/10 blur-3xl dark:bg-cyan-400/10" />
       <div className="grid gap-8 p-5 sm:p-7 lg:grid-cols-[1fr_0.9fr] lg:p-8">
         <div className="flex flex-col justify-between gap-8">
           <div>
             <div className="mb-6 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
+              <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-700 dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-100">
                 <Icon />
                 Hero Case Study
               </span>
-              <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300">
+              <span className="rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1.5 text-xs text-zinc-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300">
                 {project.role}
               </span>
             </div>
-            <h2 className="max-w-2xl text-3xl font-bold tracking-normal text-white sm:text-5xl">
+            <h2 className="max-w-2xl text-3xl font-bold tracking-normal text-zinc-900 dark:text-white sm:text-5xl">
               {project.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-300">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-600 dark:text-zinc-300">
               {project.summary}
             </p>
           </div>
@@ -507,14 +507,14 @@ const FeaturedCaseStudy = ({
               <motion.div
                 key={metric.label}
                 whileHover={{ y: -4 }}
-                className="rounded-[8px] border border-white/10 bg-white/[0.045] p-4"
+                className="rounded-[8px] border border-zinc-200/90 bg-zinc-50/90 p-4 shadow-sm dark:border-white/10 dark:bg-white/[0.045] dark:shadow-none"
               >
                 <p
                   className={`bg-gradient-to-r ${project.accent} bg-clip-text text-3xl font-bold text-transparent`}
                 >
                   {metric.value}
                 </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.16em] text-zinc-400">
+                <p className="mt-2 text-xs uppercase tracking-[0.16em] text-zinc-500 dark:text-zinc-400">
                   {metric.label}
                 </p>
               </motion.div>
@@ -524,7 +524,7 @@ const FeaturedCaseStudy = ({
           <div className="flex flex-wrap gap-3">
             <button
               onClick={onOpen}
-              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95"
+              className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 active:scale-95 dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-cyan-100"
             >
               Explore architecture
               <FiArrowUpRight />
@@ -533,12 +533,12 @@ const FeaturedCaseStudy = ({
           </div>
         </div>
 
-        <div className="relative min-h-[430px] overflow-hidden rounded-[8px] border border-white/10 bg-[#07090d] p-4">
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40" />
+        <div className="relative min-h-[430px] overflow-hidden rounded-[8px] border border-zinc-200 bg-zinc-100/90 p-4 dark:border-white/10 dark:bg-[#07090d]">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-40 dark:bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)]" />
           <motion.div
             animate={{ y: [0, -10, 0], rotate: [0, -0.5, 0.5, 0] }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="relative z-10 mx-auto mt-4 max-w-[420px] rounded-[8px] border border-white/10 bg-black/70 p-3 shadow-2xl"
+            className="relative z-10 mx-auto mt-4 max-w-[420px] rounded-[8px] border border-zinc-200 bg-white/95 p-3 shadow-xl dark:border-white/10 dark:bg-black/70 dark:shadow-2xl"
           >
             <Image
               src={project.image}
@@ -550,10 +550,10 @@ const FeaturedCaseStudy = ({
               {["Customer App", "Vendor App", "Admin OS"].map((item) => (
                 <div
                   key={item}
-                  className="rounded-[6px] border border-white/10 bg-white/[0.04] p-3"
+                  className="rounded-[6px] border border-zinc-200 bg-zinc-50 p-3 dark:border-white/10 dark:bg-white/[0.04]"
                 >
-                  <div className="mb-3 h-1.5 w-10 rounded-full bg-cyan-300/70" />
-                  <p className="text-[11px] font-semibold text-zinc-200">
+                  <div className="mb-3 h-1.5 w-10 rounded-full bg-cyan-500/70 dark:bg-cyan-300/70" />
+                  <p className="text-[11px] font-semibold text-zinc-700 dark:text-zinc-200">
                     {item}
                   </p>
                 </div>
@@ -561,11 +561,11 @@ const FeaturedCaseStudy = ({
             </div>
           </motion.div>
 
-          <div className="relative z-10 mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-xs text-zinc-400">
+          <div className="relative z-10 mt-5 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
             <ArchitectureNode label="Mobile Apps" />
-            <div className="h-px w-10 bg-gradient-to-r from-cyan-300 to-violet-300" />
+            <div className="h-px w-10 bg-gradient-to-r from-cyan-500 to-violet-500 dark:from-cyan-300 dark:to-violet-300" />
             <ArchitectureNode label="Node Backend" />
-            <div className="col-start-2 h-10 w-px justify-self-center bg-gradient-to-b from-violet-300 to-emerald-300" />
+            <div className="col-start-2 h-10 w-px justify-self-center bg-gradient-to-b from-violet-500 to-emerald-500 dark:from-violet-300 dark:to-emerald-300" />
             <div className="col-span-3 flex justify-center">
               <ArchitectureNode label="MongoDB + Admin Workflows" wide />
             </div>
@@ -585,7 +585,7 @@ const ArchitectureNode = ({
 }) => (
   <motion.div
     whileHover={{ scale: 1.03 }}
-    className={`rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 px-4 py-3 text-center font-semibold text-cyan-50 ${wide ? "w-full max-w-sm" : ""}`}
+    className={`rounded-[8px] border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-center font-semibold text-cyan-800 shadow-sm dark:border-cyan-300/20 dark:bg-cyan-300/10 dark:text-cyan-50 dark:shadow-none ${wide ? "w-full max-w-sm" : ""}`}
   >
     {label}
   </motion.div>
@@ -611,19 +611,19 @@ const ProjectCard = ({
       variants={fadeUp}
       whileHover={{ y: -8, rotateX: 2, rotateY: -2 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="group relative flex min-h-[540px] flex-col overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-4 backdrop-blur-xl"
+      className="group relative flex min-h-[540px] flex-col overflow-hidden rounded-[8px] border border-zinc-200/90 bg-white/80 p-4 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none"
     >
       <div
         className={`absolute inset-x-0 top-0 h-px bg-gradient-to-r ${project.accent} opacity-80`}
       />
-      <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-black">
+      <div className="relative overflow-hidden rounded-[8px] border border-zinc-200 bg-zinc-100 dark:border-white/10 dark:bg-black">
         <Image
           src={project.image}
           alt={project.title}
           className="h-56 w-full object-cover object-top transition duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-        <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
+        <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
           <Icon />
           {project.kicker}
         </div>
@@ -633,10 +633,10 @@ const ProjectCard = ({
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
           {project.role}
         </p>
-        <h3 className="mt-3 text-2xl font-bold tracking-normal text-white">
+        <h3 className="mt-3 text-2xl font-bold tracking-normal text-zinc-900 dark:text-white">
           {project.title}
         </h3>
-        <p className="mt-4 text-sm leading-7 text-zinc-300">
+        <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
           {project.summary}
         </p>
 
@@ -644,7 +644,7 @@ const ProjectCard = ({
           {project.labels.slice(0, 3).map((label) => (
             <span
               key={label}
-              className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] text-zinc-300"
+              className="rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1.5 text-[11px] text-zinc-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300"
             >
               {label}
             </span>
@@ -653,7 +653,7 @@ const ProjectCard = ({
 
         <button
           onClick={onOpen}
-          className="mt-auto inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-white transition hover:border-cyan-300/50 hover:bg-cyan-300/10 active:scale-95"
+          className="mt-auto inline-flex w-fit items-center gap-2 rounded-full border border-zinc-300 bg-zinc-100/80 px-4 py-2.5 text-sm font-semibold text-zinc-900 shadow-sm transition hover:border-cyan-500/50 hover:bg-cyan-50 active:scale-95 dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:shadow-none dark:hover:border-cyan-300/50 dark:hover:bg-cyan-300/10"
         >
           View case study
           <FiArrowUpRight />
@@ -673,8 +673,8 @@ const ProjectLinks = ({
 }) => {
   const linkClass =
     variant === "hero"
-      ? "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10 active:scale-95"
-      : "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10 active:scale-95";
+      ? "inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/90 px-5 py-3 text-sm font-semibold text-zinc-900 shadow-sm transition hover:border-cyan-500/40 hover:bg-cyan-50 active:scale-95 dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:shadow-none dark:hover:border-cyan-300/40 dark:hover:bg-cyan-300/10"
+      : "inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white/90 px-3.5 py-2 text-xs font-semibold text-zinc-800 shadow-sm transition hover:border-cyan-500/40 hover:bg-cyan-50 active:scale-95 dark:border-white/15 dark:bg-white/[0.04] dark:text-white dark:shadow-none dark:hover:border-cyan-300/40 dark:hover:bg-cyan-300/10";
 
   const targetLink = project.liveLink || project.link;
 
@@ -715,7 +715,7 @@ const ProjectLinks = ({
 };
 
 const TechStackMarquee = () => (
-  <div className="mt-20 overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] py-5 backdrop-blur-xl">
+  <div className="mt-20 overflow-hidden rounded-[8px] border border-zinc-200/90 bg-white/80 py-5 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none">
     <motion.div
       animate={{ x: ["0%", "-50%"] }}
       transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
@@ -725,9 +725,9 @@ const TechStackMarquee = () => (
         ({ label, icon: Icon }, index) => (
           <div
             key={`${label}-${index}`}
-            className="flex min-w-max items-center gap-3 rounded-full border border-white/10 bg-zinc-950/70 px-5 py-3 text-sm font-semibold text-zinc-200"
+            className="flex min-w-max items-center gap-3 rounded-full border border-zinc-200 bg-white px-5 py-3 text-sm font-semibold text-zinc-800 shadow-sm dark:border-white/10 dark:bg-zinc-950/70 dark:text-zinc-200 dark:shadow-none"
           >
-            <Icon className="text-lg text-cyan-200" />
+            <Icon className="text-lg text-cyan-600 dark:text-cyan-200" />
             {label}
           </div>
         ),
@@ -749,14 +749,14 @@ const OtherProjects = () => (
       className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end"
     >
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-200">
           Additional Production Builds
         </p>
-        <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold text-zinc-900 dark:text-white sm:text-4xl">
           Specialized Web & Mobile Solutions
         </h2>
       </div>
-      <p className="max-w-xl text-sm leading-7 text-zinc-400">
+      <p className="max-w-xl text-sm leading-7 text-zinc-600 dark:text-zinc-400">
         Focused business platforms, booking engines, responsive web experiences,
         and internal tools built with high performance and production
         reliability.
@@ -769,7 +769,7 @@ const OtherProjects = () => (
           key={project.title}
           variants={fadeUp}
           whileHover={{ y: -6 }}
-          className="group overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-3 backdrop-blur-xl"
+          className="group overflow-hidden rounded-[8px] border border-zinc-200/90 bg-white/80 p-3 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none"
         >
           <div className="overflow-hidden rounded-[6px]">
             <Image
@@ -779,15 +779,15 @@ const OtherProjects = () => (
             />
           </div>
           <div className="p-2 pt-4">
-            <h3 className="text-base font-bold text-white">{project.title}</h3>
-            <p className="mt-2 text-xs leading-5 text-zinc-400">
+            <h3 className="text-base font-bold text-zinc-900 dark:text-white">{project.title}</h3>
+            <p className="mt-2 text-xs leading-5 text-zinc-500 dark:text-zinc-400">
               {project.meta}
             </p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {project.tech.split(",").map((t) => (
                 <span
                   key={t.trim()}
-                  className="inline-flex items-center gap-1 rounded-full border border-cyan-300/20 bg-cyan-300/[0.07] px-2.5 py-1 text-[10px] font-semibold text-cyan-200"
+                  className="inline-flex items-center gap-1 rounded-full border border-cyan-500/25 bg-cyan-500/[0.08] px-2.5 py-1 text-[10px] font-semibold text-cyan-700 dark:border-cyan-300/20 dark:bg-cyan-300/[0.07] dark:text-cyan-200"
                 >
                   <FiCode className="text-[9px]" />
                   {t.trim()}
@@ -800,7 +800,7 @@ const OtherProjects = () => (
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[11px] font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-zinc-100/80 px-3 py-2 text-[11px] font-semibold text-zinc-800 transition hover:border-cyan-500/40 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:hover:border-cyan-300/40 dark:hover:bg-cyan-300/10"
                 >
                   GitHub
                   <FiExternalLink />
@@ -810,7 +810,7 @@ const OtherProjects = () => (
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-[11px] font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-zinc-100/80 px-3 py-2 text-[11px] font-semibold text-zinc-800 transition hover:border-cyan-500/40 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:hover:border-cyan-300/40 dark:hover:bg-cyan-300/10"
               >
                 Live
                 <FiArrowUpRight />
@@ -836,7 +836,7 @@ const ProjectModal = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-xl"
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-4 backdrop-blur-xl dark:bg-black/80"
         onClick={onClose}
       >
         <motion.div
@@ -845,12 +845,12 @@ const ProjectModal = ({
           exit={{ opacity: 0, y: 24, scale: 0.96 }}
           transition={{ duration: 0.28 }}
           onClick={(event) => event.stopPropagation()}
-          className="relative max-h-[88vh] w-full max-w-5xl overflow-y-auto rounded-[8px] border border-white/10 bg-[#07090d] p-5 shadow-2xl sm:p-7"
+          className="relative max-h-[88vh] w-full max-w-5xl overflow-y-auto rounded-[8px] border border-zinc-200 bg-white p-5 text-zinc-900 shadow-2xl dark:border-white/10 dark:bg-[#07090d] dark:text-white sm:p-7"
         >
           <button
             onClick={onClose}
             aria-label="Close project details"
-            className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-white/[0.06] p-2 text-white transition hover:bg-white/10"
+            className="absolute right-4 top-4 z-10 rounded-full border border-zinc-200 bg-zinc-100 p-2 text-zinc-700 transition hover:bg-zinc-200 dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/10"
           >
             <FiX />
           </button>
@@ -862,13 +862,13 @@ const ProjectModal = ({
               className="h-full max-h-[520px] rounded-[8px] object-cover object-top"
             />
             <div className="pr-2">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-200">
                 {project.kicker}
               </p>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-bold text-zinc-900 dark:text-white sm:text-4xl">
                 {project.title}
               </h2>
-              <p className="mt-4 text-sm leading-7 text-zinc-300">
+              <p className="mt-4 text-sm leading-7 text-zinc-600 dark:text-zinc-300">
                 {project.description}
               </p>
 
@@ -876,14 +876,14 @@ const ProjectModal = ({
                 {project.metrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="rounded-[8px] border border-white/10 bg-white/[0.04] p-4"
+                    className="rounded-[8px] border border-zinc-200 bg-zinc-50 p-4 shadow-sm dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none"
                   >
                     <p
                       className={`bg-gradient-to-r ${project.accent} bg-clip-text text-2xl font-bold text-transparent`}
                     >
                       {metric.value}
                     </p>
-                    <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-zinc-400">
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400">
                       {metric.label}
                     </p>
                   </div>
@@ -891,16 +891,16 @@ const ProjectModal = ({
               </div>
 
               <div className="mt-7">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-900 dark:text-white">
                   Production Scope
                 </h3>
                 <div className="mt-4 space-y-3">
                   {project.systems.map((item) => (
                     <div
                       key={item}
-                      className="flex gap-3 text-sm leading-6 text-zinc-300"
+                      className="flex gap-3 text-sm leading-6 text-zinc-600 dark:text-zinc-300"
                     >
-                      <FiCheckCircle className="mt-1 flex-none text-emerald-300" />
+                      <FiCheckCircle className="mt-1 flex-none text-emerald-500 dark:text-emerald-300" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -911,7 +911,7 @@ const ProjectModal = ({
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-zinc-300"
+                    className="rounded-full border border-zinc-200 bg-zinc-100 px-3 py-1.5 text-xs text-zinc-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300"
                   >
                     {item}
                   </span>
