@@ -122,7 +122,7 @@ const HomeContent = () => {
         <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.035] p-3.5 shadow-[0_40px_120px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px] opacity-35" />
 
-          <div className="relative min-h-[520px] overflow-hidden rounded-[8px] border border-white/10 bg-[#06080d]/90 p-5 flex flex-col justify-between">
+          <div className="relative overflow-hidden rounded-[8px] border border-white/10 bg-[#06080d]/90 p-5 flex flex-col gap-4">
             {/* Top Bar Status */}
             <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <div className="flex items-center gap-2">
@@ -136,14 +136,17 @@ const HomeContent = () => {
               </span>
             </div>
 
-            {/* Visual Node Diagram */}
-            <div className="relative my-auto py-6">
-              {/* Center Hub */}
-              <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-20 mx-auto w-fit rounded-[8px] border border-cyan-300/40 bg-zinc-950/90 p-4 shadow-[0_0_50px_rgba(34,211,238,0.18)] text-center"
-              >
+            {/* Center Hub */}
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-20 mx-auto w-fit rounded-[8px] border border-cyan-300/40 bg-zinc-950/90 p-4 shadow-[0_0_50px_rgba(34,211,238,0.18)] text-center"
+            >
+              {/* Connecting Ambient Lines behind hub */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-20 overflow-hidden rounded-[8px]">
+                <div className="h-40 w-40 rounded-full border border-dashed border-cyan-300/40 animate-spin-slow" />
+              </div>
+              <div className="relative z-10">
                 <div className="mx-auto mb-2 grid h-10 w-10 place-items-center rounded-full border border-cyan-300/30 bg-cyan-300/10 text-cyan-200">
                   <FiCpu className="text-lg" />
                 </div>
@@ -153,78 +156,73 @@ const HomeContent = () => {
                 <p className="mt-1 text-[10px] text-zinc-400">
                   APIs • Workflows • Cloud
                 </p>
-              </motion.div>
-
-              {/* Connecting Ambient Lines */}
-              <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30">
-                <div className="h-64 w-64 rounded-full border border-dashed border-cyan-300/40 animate-spin-slow" />
               </div>
+            </motion.div>
 
-              {/* Satellite Node: Web Platforms */}
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                className="relative z-10 -mt-2 mb-4 flex items-center justify-between rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
-              >
-                <div className="flex items-center gap-2.5">
-                  <span className="grid h-7 w-7 place-items-center rounded-[6px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-200 text-xs">
-                    <FiGlobe />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold text-white">Web Platforms</p>
-                    <p className="text-[10px] text-zinc-400">Next.js • React • TS</p>
-                  </div>
-                </div>
-                <span className="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] font-medium text-cyan-200">
-                  Production Ready
+            {/* Satellite Node: Web Platforms */}
+            <motion.div
+              animate={{ y: [0, -5, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+              className="relative z-10 flex items-center justify-between rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="grid h-7 w-7 place-items-center rounded-[6px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-200 text-xs">
+                  <FiGlobe />
                 </span>
+                <div>
+                  <p className="text-xs font-semibold text-white">Web Platforms</p>
+                  <p className="text-[10px] text-zinc-400">Next.js • React • TS</p>
+                </div>
+              </div>
+              <span className="rounded-full bg-cyan-400/10 px-2 py-0.5 text-[10px] font-medium text-cyan-200">
+                Production Ready
+              </span>
+            </motion.div>
+
+            {/* Satellite Grid: Mobile & E-commerce */}
+            <div className="grid grid-cols-2 gap-3">
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                className="rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
+              >
+                <div className="flex items-center gap-2 text-emerald-200 text-xs mb-1">
+                  <FiSmartphone />
+                  <span className="text-xs font-semibold text-white">Mobile Apps</span>
+                </div>
+                <p className="text-[10px] text-zinc-400">iOS & Android / Flutter</p>
               </motion.div>
 
-              {/* Satellite Grid: Mobile & E-commerce */}
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                  className="rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
-                >
-                  <div className="flex items-center gap-2 text-emerald-200 text-xs mb-1">
-                    <FiSmartphone />
-                    <span className="text-xs font-semibold text-white">Mobile Apps</span>
-                  </div>
-                  <p className="text-[10px] text-zinc-400">iOS & Android / Flutter</p>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                  className="rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
-                >
-                  <div className="flex items-center gap-2 text-violet-200 text-xs mb-1">
-                    <FiShoppingBag />
-                    <span className="text-xs font-semibold text-white">E-commerce</span>
-                  </div>
-                  <p className="text-[10px] text-zinc-400">Shopify & Custom Stores</p>
-                </motion.div>
-              </div>
-
-              {/* Satellite Node: Custom Software & Dashboards */}
               <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="mt-3 flex items-center justify-between rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                className="rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
               >
-                <div className="flex items-center gap-2.5">
-                  <span className="grid h-7 w-7 place-items-center rounded-[6px] border border-violet-300/20 bg-violet-300/10 text-violet-200 text-xs">
-                    <FiLayers />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold text-white">Custom Software & Dashboards</p>
-                    <p className="text-[10px] text-zinc-400">Internal Portals • Data Systems</p>
-                  </div>
+                <div className="flex items-center gap-2 text-violet-200 text-xs mb-1">
+                  <FiShoppingBag />
+                  <span className="text-xs font-semibold text-white">E-commerce</span>
                 </div>
-                <FiCheckCircle className="text-emerald-300 text-sm" />
+                <p className="text-[10px] text-zinc-400">Shopify & Custom Stores</p>
               </motion.div>
             </div>
+
+            {/* Satellite Node: Custom Software & Dashboards */}
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              className="flex items-center justify-between rounded-[8px] border border-white/10 bg-black/60 p-3 backdrop-blur"
+            >
+              <div className="flex items-center gap-2.5">
+                <span className="grid h-7 w-7 place-items-center rounded-[6px] border border-violet-300/20 bg-violet-300/10 text-violet-200 text-xs">
+                  <FiLayers />
+                </span>
+                <div>
+                  <p className="text-xs font-semibold text-white">Custom Software & Dashboards</p>
+                  <p className="text-[10px] text-zinc-400">Internal Portals • Data Systems</p>
+                </div>
+              </div>
+              <FiCheckCircle className="text-emerald-300 text-sm" />
+            </motion.div>
 
             {/* Bottom Info Footprint */}
             <div className="flex items-center justify-between border-t border-white/10 pt-3 text-[11px] text-zinc-400">
