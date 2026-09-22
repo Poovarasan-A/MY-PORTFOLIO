@@ -1,8 +1,10 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
+import LogoImg from "../public/images/logo.png";
 import { motion, type Variants } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
@@ -308,8 +310,12 @@ const Contact = () => {
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
             <div>
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-cyan-500/30 bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-emerald-500/20 text-base font-black tracking-wider text-cyan-700 dark:border-cyan-400/40 dark:text-cyan-200">
-                  NV
+                <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-[8px] border border-cyan-500/30 bg-cyan-500/10 p-1 dark:border-cyan-300/30 dark:bg-cyan-300/10">
+                  <Image
+                    src={LogoImg}
+                    alt="NexVulf Logo"
+                    className="h-8 w-8 object-contain dark:invert"
+                  />
                 </div>
                 <div>
                   <span className="text-base font-bold tracking-tight text-zinc-900 dark:text-white">

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./theme/ThemeToggle";
+import LogoImg from "../public/images/logo.png";
 
 const navItems = [
   { label: "Services", href: "#services" },
@@ -24,8 +26,13 @@ const Header = () => {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between rounded-[8px] border border-zinc-200/80 bg-white/80 px-4 shadow-[0_12px_40px_rgba(0,0,0,0.06)] backdrop-blur-2xl transition-colors duration-300 dark:border-white/10 dark:bg-black/55 dark:shadow-[0_18px_80px_rgba(0,0,0,0.45)] sm:px-5">
         <a href="#" className="group flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-[8px] border border-cyan-500/30 bg-cyan-500/10 text-sm font-bold tracking-wider text-cyan-700 transition group-hover:border-cyan-500/60 group-hover:bg-cyan-500/15 dark:border-cyan-300/30 dark:bg-cyan-300/10 dark:text-cyan-100 dark:group-hover:border-cyan-300/60 dark:group-hover:bg-cyan-300/15">
-            NV
+          <span className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-[8px] border border-cyan-500/30 bg-cyan-500/10 p-1 transition group-hover:border-cyan-500/60 group-hover:bg-cyan-500/15 dark:border-cyan-300/30 dark:bg-cyan-300/10 dark:group-hover:border-cyan-300/60 dark:group-hover:bg-cyan-300/15">
+            <Image
+              src={LogoImg}
+              alt="NexVulf Logo"
+              className="h-7 w-7 object-contain transition-transform duration-300 group-hover:scale-105 dark:invert"
+              priority
+            />
           </span>
           <span className="leading-tight">
             <span className="block text-sm font-bold tracking-tight text-zinc-900 dark:text-white">
