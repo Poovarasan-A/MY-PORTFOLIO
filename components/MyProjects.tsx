@@ -39,13 +39,9 @@ import {
 
 import DoctorApp from "../public/images/doctor-appointment.png";
 import BodyMech from "../public/images/Body Mechanics gym.png";
-import GuestRoom from "../public/images/GuestRoom thumbnail.jpg";
 import HotoOffers from "../public/images/hoto-offers.png";
 import InteriorDesign from "../public/images/interiors-designer.png";
-import TaskEasy from "../public/images/TaskEasy thumbnail.jpg";
-import Wolfkart from "../public/images/Wolfkart thumbnail 2.jpg";
-import Livixius from "../public/images/Livixius.png";
-import Rapid from "../public/images/Rapid.png";
+import MoonriseFabrication from "../public/images/moonrise-fabrication.jpg";
 import realestate from "../public/images/real-estate.png";
 import ShopifyStorefront from "../public/images/shopify-storefront.png";
 
@@ -228,14 +224,6 @@ const otherProjects = [
     githubLink: "",
   },
   {
-    title: "Task Management App",
-    image: TaskEasy,
-    meta: "Productivity platform for managing tasks, tracking progress, organizing workflows, and improving team collaboration.",
-    tech: "Next.js, MongoDB, OAuth",
-    liveLink: "https://task-easy-manage.vercel.app/",
-    githubLink: "https://github.com/Poovarasan-A/Task-Easy-Nextjs-Mongodb.git",
-  },
-  {
     title: "Body Mechanics Gym Website",
     image: BodyMech,
     meta: "Modern fitness website featuring membership plans, trainer information, workout programs, and engaging user experience.",
@@ -244,21 +232,12 @@ const otherProjects = [
     githubLink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
   {
-    title: "Guest Booking App",
-    image: GuestRoom,
-    meta: "Online reservation system allowing users to browse properties, check availability, and manage bookings seamlessly.",
-    tech: "MERN Stack",
-    liveLink: "https://guest-room-booking-application-2yex.onrender.com/",
-    githubLink:
-      "https://github.com/Poovarasan-A/Guest-room-booking-application.git",
-  },
-  {
-    title: "Livixius HMS",
-    image: Livixius,
-    meta: "Product showcase website designed to present hotel management software features and product capabilities.",
-    tech: "HTML, CSS, GSAP",
-    liveLink: "https://poovarasan-a.github.io/Livixius-web/",
-    githubLink: "https://github.com/Poovarasan-A/Livixius-web.git",
+    title: "Moon Rise Fabrication",
+    image: MoonriseFabrication,
+    meta: "Business website for a steel fabrication & playground equipment manufacturer (est. 1989) with a 59-model product catalogue, filterable gallery, and quote request flow.",
+    tech: "Next.js, Tailwind CSS, Framer Motion",
+    liveLink: "https://moonrise-fabrication.netlify.app",
+    githubLink: "",
   },
 ];
 
