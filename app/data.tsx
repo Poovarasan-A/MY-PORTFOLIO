@@ -33,10 +33,58 @@ import html from "../public/images/html-5.png";
 import bootstrap from "../public/images/bootstrap.png";
 import rapid from "../public/images/Rapid.png";
 
-// New Freelance Projects
+// New Freelance & Studio Projects
 import DoctorApp from "../public/images/doctor-appointment.png";
 import InteriorDesign from "../public/images/interiors-designer.png";
 import HotoOffers from "../public/images/hoto-offers.png";
+import ShopifyStorefront from "../public/images/shopify-storefront.png";
+
+export const primaryServices = [
+  {
+    number: "01",
+    title: "Web Development",
+    description:
+      "High-performance, responsive websites, web applications, and marketing platforms built with Next.js, React, TypeScript, and modern CSS architecture.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    number: "02",
+    title: "Mobile App Development",
+    description:
+      "Cross-platform mobile applications for iOS and Android built with Flutter, focusing on native performance, clean state management, and responsive device layouts.",
+    tags: ["Flutter", "Dart", "iOS", "Android"],
+  },
+  {
+    number: "03",
+    title: "Custom Software",
+    description:
+      "Bespoke business software, role-based admin portals, internal tools, operational workflow management, and data visualization dashboards.",
+    tags: ["Admin Portals", "Workflow Tools", "Dashboards", "Internal Systems"],
+  },
+  {
+    number: "04",
+    title: "E-commerce",
+    description:
+      "Custom Shopify themes and storefronts, product catalogs, shopping carts, checkout workflows, and secure payment processing integrations.",
+    tags: ["Shopify Liquid", "Custom Storefronts", "Stripe", "Checkout Flows"],
+  },
+  {
+    number: "05",
+    title: "SaaS & Product Development",
+    description:
+      "End-to-end digital product engineering, authentication systems, multi-surface applications, scalable database schemas, and cloud deployment.",
+    tags: ["SaaS Architecture", "APIs", "MongoDB", "Node.js"],
+  },
+];
+
+export const supportingCapabilities = [
+  { label: "UI/UX Design", description: "Design systems, interactive prototypes, dark/light themes, typography, and motion design." },
+  { label: "Backend & API Development", description: "RESTful APIs, Node.js / Express services, serverless cloud functions, and database modeling." },
+  { label: "Payment Integrations", description: "Payment gateways, checkout flows, transaction management, and billing workflows." },
+  { label: "Cloud Deployment", description: "Production releases, DNS setup, cloud hosting configuration, and automated builds." },
+  { label: "Third-Party Integrations", description: "Messaging (email/SMS/WhatsApp), analytics, CMS platforms, and external APIs." },
+  { label: "Maintenance & Support", description: "Post-launch technical support, performance audits, bug fixes, and feature iterations." },
+];
 
 export const skillsList = [
   { label: "ReactJs", link: "", icon: <RiReactjsLine />, newTab: false },
@@ -57,10 +105,20 @@ export const projectsList = [
   {
     name: "Hoto Offers",
     image: HotoOffers,
-    title: "Hoto Offers Ecosystem - Official Developer",
+    title: "Hoto Offers Digital Ecosystem",
     description:
-      "As the Official Developer, I architected and built the complete Hoto Offers suite. This includes a high-traffic Customer App for discovering hyperlocal deals, a robust Vendor App for real-time offer management, a comprehensive Admin Dashboard with advanced analytics, and a SEO-optimized marketing website.",
+      "A multi-surface production ecosystem including a customer mobile app for hyperlocal offer discovery, a vendor app for real-time promotion management, an administrative operations dashboard, and an optimized marketing website.",
     weblink: "https://hotooffers.com",
+    gitlink: "#",
+  },
+  // Shopify Custom Storefront
+  {
+    name: "Shopify Custom Storefront",
+    image: ShopifyStorefront,
+    title: "Shopify Custom Storefront - E-commerce Architecture",
+    description:
+      "A tailored Shopify storefront built with custom Liquid theme architecture, modular sections, predictive search, quick-add modal interactions, dynamic collection filtering, and responsive product showcases.",
+    weblink: "#",
     gitlink: "#",
   },
   // Doctor Appointment Booking
@@ -69,18 +127,18 @@ export const projectsList = [
     image: DoctorApp,
     title: "Doctor Appointment Booking - Health-tech Solution",
     description:
-      "A sophisticated health-tech application designed to streamline clinical workflows. It features a real-time appointment booking system, specialized doctor profiles with availability calendars, an automated patient notification system, and a secure medical records management interface for healthcare providers.",
-    weblink: "#",
+      "A health-tech web application designed to streamline clinical appointment workflows, featuring dynamic doctor availability calendars, patient booking flows, automated notifications, and an administrative management dashboard.",
+    weblink: "https://ahamalar.netlify.app/",
     gitlink: "#",
   },
   // Interiors Designer Website
   {
     name: "Interior Design Portfolio",
     image: InteriorDesign,
-    title: "Interior Designer Website - High-end Showcase",
+    title: "Interior Designer Website - Studio Showcase",
     description:
-      "A luxury web platform tailored for high-end interior designers. It focuses on visual excellence with smooth GSAP animations, high-resolution project galleries, a dynamic consultation inquiry system, and a minimalist design aesthetic that highlights artistic architectural and interior photography.",
-    weblink: "#",
+      "A refined web platform crafted for a luxury interior design studio, featuring smooth visual animations, high-resolution project portfolio galleries, and an interactive consultation inquiry flow.",
+    weblink: "https://inhabytatelier.com/",
     gitlink: "#",
   },
   // Guest Room App

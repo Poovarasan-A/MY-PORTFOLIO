@@ -47,6 +47,7 @@ import Wolfkart from "../public/images/Wolfkart thumbnail 2.jpg";
 import Livixius from "../public/images/Livixius.png";
 import Rapid from "../public/images/Rapid.png";
 import realestate from "../public/images/real-estate.png";
+import ShopifyStorefront from "../public/images/shopify-storefront.png";
 
 type Project = {
   title: string;
@@ -66,8 +67,6 @@ type Project = {
   githubLink?: string;
 };
 
-const dummyLiveLink = "https://example.com";
-
 const stackIcons = [
   { label: "Flutter", icon: SiFlutter },
   { label: "Next.js", icon: SiNextdotjs },
@@ -81,40 +80,31 @@ const stackIcons = [
 
 const featuredProject: Project = {
   title: "HOTO Offers Ecosystem",
-  kicker: "Hyperlocal offers platform",
-  role: "Solo Developer",
+  kicker: "Hyperlocal retail ecosystem",
+  role: "Multi-Surface Platform Architecture",
   image: HotoOffers,
   summary:
-    "A complete production ecosystem spanning customer mobile, vendor operations, admin control, public website, backend architecture, deployment, and ongoing maintenance.",
+    "A multi-surface production ecosystem spanning customer mobile, vendor operations, admin control, public marketing website, and backend architecture.",
   description:
-    "Built independently from first architecture pass through Play Store deployment and production maintenance. The system connects customer discovery, vendor offer workflows, admin governance, and business operations across mobile, web, backend, and database layers.",
-  stack: [
-    "Flutter",
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "MongoDB",
-    "Play Store",
-    "REST APIs",
-    "Admin Ops",
-  ],
+    "Architected and engineered across mobile, web, backend, and database layers. The system connects customer discovery, vendor promotion workflows, administrative governance, and business operations across multiple production surfaces.",
+  stack: ["Flutter", "React.js", "Next.js", "Node.js", "MongoDB", "REST APIs"],
   labels: [
-    "Solo Developer",
+    "Multi-Platform",
     "Production System",
     "Live Ecosystem",
-    "Multi-Platform",
+    "Mobile + Web",
   ],
   metrics: [
-    { value: "1 yr", label: "Product ownership" },
-    { value: "4 apps", label: "Customer, vendor, admin, web" },
-    { value: "100%", label: "Built end-to-end" },
+    { value: "4 Apps", label: "Customer, vendor, admin, web" },
+    { value: "Flutter", label: "Mobile architecture" },
+    { value: "Full Stack", label: "Node.js & MongoDB" },
   ],
   systems: [
-    "Customer app for offer discovery and user journeys",
-    "Vendor app for real-time offer management",
+    "Customer app for hyperlocal offer discovery",
+    "Vendor app for real-time promotion management",
     "React admin dashboard for operations and governance",
     "Node.js backend with MongoDB data architecture",
-    "Next.js official website and production deployment",
+    "Next.js official marketing website",
   ],
   accent: "from-cyan-400 via-violet-400 to-emerald-300",
   icon: FiLayers,
@@ -125,33 +115,71 @@ const featuredProject: Project = {
 const caseStudies: Project[] = [
   featuredProject,
   {
+    title: "Shopify Custom Storefront",
+    kicker: "E-commerce / Shopify",
+    role: "Theme Architecture & Development",
+    image: ShopifyStorefront,
+    summary:
+      "A tailored Shopify storefront built with bespoke Liquid sections, modular product showcases, quick-add modal, and predictive search.",
+    description:
+      "Developed custom Liquid theme architecture, modular sections, predictive search, quick-add modal interactions, dynamic collection filtering, and responsive product showcases for an e-commerce brand.",
+    stack: [
+      "Shopify Liquid",
+      "HTML / CSS",
+      "JavaScript",
+      "Theme Sections",
+      "Predictive Search",
+      "Responsive UX",
+    ],
+    labels: [
+      "E-commerce",
+      "Shopify Liquid",
+      "Custom Storefront",
+      "Modular Sections",
+    ],
+    metrics: [
+      { value: "Modular", label: "Liquid architecture" },
+      { value: "Custom", label: "Storefront sections" },
+      { value: "Mobile", label: "Optimized experience" },
+    ],
+    systems: [
+      "Bespoke Liquid section and snippet architecture",
+      "Predictive search and dynamic collection filtering",
+      "Quick-add modal and streamlined cart interactions",
+      "Responsive product showcase and custom legal policy templates",
+    ],
+    accent: "from-emerald-300 via-teal-300 to-cyan-300",
+    icon: FiShoppingBag,
+    liveLink: "#",
+  },
+  {
     title: "Doctor Appointment Platform",
-    kicker: "Healthcare SaaS",
-    role: "Full Stack Developer",
+    kicker: "Healthcare Web Platform",
+    role: "Full-Stack Web Application",
     image: DoctorApp,
     summary:
-      "A healthcare booking platform with smart slot allocation, payment workflows, content engine, automation, and administrative visibility.",
+      "A healthcare booking platform with dynamic calendar slot allocation, appointment tracking, content engine, and automated patient communication.",
     description:
-      "Designed booking flows for doctors and patients with dynamic slot allocation, appointment tracking, payment and refund states, multi-language blogs, YouTube integration, and WhatsApp plus email automation.",
+      "Designed booking flows for clinics and patients with dynamic doctor availability calendars, appointment tracking, payment workflow states, multi-language informational content, and automated notifications.",
     stack: [
       "Next.js",
       "React.js",
       "Node.js",
-      "Payments",
-      "Automation",
-      "Dashboard",
+      "Booking Flows",
+      "Automated Alerts",
+      "Admin Portal",
     ],
     labels: ["Health-tech", "Smart Booking", "Automation", "Admin Dashboard"],
     metrics: [
-      { value: "24/7", label: "Booking workflows" },
-      { value: "Multi", label: "Language content" },
-      { value: "Auto", label: "WhatsApp + email" },
+      { value: "Real-Time", label: "Calendar scheduling" },
+      { value: "Multi-Lang", label: "Educational content" },
+      { value: "Automated", label: "Patient notifications" },
     ],
     systems: [
       "Dynamic calendar and slot allocation logic",
       "Appointment lifecycle tracking for admins",
-      "Payment, refund, and booking status workflows",
-      "Multi-language blog and video content integrations",
+      "Booking status and payment state workflows",
+      "Multi-language informational blog and video integrations",
     ],
     accent: "from-sky-400 via-teal-300 to-lime-300",
     icon: FiCalendar,
@@ -159,62 +187,34 @@ const caseStudies: Project[] = [
   },
   {
     title: "Interior Design Website",
-    kicker: "Luxury brand experience",
-    role: "Frontend Experience Developer",
+    kicker: "Studio Brand Showcase",
+    role: "Frontend Architecture & Motion",
     image: InteriorDesign,
     summary:
-      "A cinematic, animated business website crafted for a premium interior design brand with polished transitions and visual storytelling.",
+      "A visual showcase website crafted for a luxury interior design studio with polished transitions and visual storytelling.",
     description:
-      "Focused on high-end brand perception, smooth motion, immersive project presentation, responsive layouts, and a luxury editorial feel suitable for international clientele.",
+      "Focused on brand presentation, smooth motion, immersive project galleries, responsive layouts, and an interactive consultation inquiry flow.",
     stack: [
       "React.js",
-      "Animations",
-      "Responsive UI",
-      "Luxury UX",
-      "Performance",
+      "GSAP / Animations",
+      "Tailwind CSS",
+      "Responsive UX",
+      "Gallery Showcase",
     ],
-    labels: ["Cinematic UI", "Premium Brand", "Smooth Motion", "Responsive"],
+    labels: ["Visual UI", "Studio Brand", "Smooth Motion", "Responsive"],
     metrics: [
-      { value: "High", label: "Visual polish" },
-      { value: "60fps", label: "Motion target" },
-      { value: "Luxury", label: "Positioning" },
+      { value: "Tailored", label: "Visual design" },
+      { value: "Smooth", label: "Animated transitions" },
+      { value: "Editorial", label: "Gallery showcase" },
     ],
     systems: [
       "Animated visual sections and polished transitions",
-      "Responsive gallery-first content structure",
-      "Consultation-focused business conversion flow",
+      "Responsive gallery-first project presentation",
+      "Consultation-focused client inquiry workflow",
     ],
     accent: "from-amber-200 via-rose-300 to-violet-300",
     icon: FiMonitor,
     liveLink: "https://inhabytatelier.com/",
-    // githubLink: dummyGithubLink,
-  },
-  {
-    title: "WolfKart E-Commerce",
-    kicker: "Commerce platform",
-    role: "MERN Stack Developer",
-    image: Wolfkart,
-    summary:
-      "A full-featured commerce platform with product browsing, admin management, authentication, order handling, and payment flow.",
-    description:
-      "Implemented an e-commerce experience across storefront and admin surfaces, including product operations, user authentication, cart and checkout states, and payment integration.",
-    stack: ["React.js", "Node.js", "Express", "MongoDB", "Stripe", "JWT"],
-    labels: ["Commerce", "Admin Tools", "Payments", "MERN Stack"],
-    metrics: [
-      { value: "Full", label: "Shopping flow" },
-      { value: "Admin", label: "Product control" },
-      { value: "Stripe", label: "Payment flow" },
-    ],
-    systems: [
-      "Storefront product and cart experience",
-      "Admin product management workflows",
-      "Authentication, checkout, and payment states",
-    ],
-    accent: "from-fuchsia-300 via-violet-300 to-cyan-300",
-    icon: FiShoppingBag,
-    link: "http://wolfkart.onrender.com",
-    liveLink: "http://wolfkart.onrender.com",
-    githubLink: "https://github.com/Poovarasan-A/E-Commerce--MERN-Stack.git",
   },
 ];
 
@@ -228,20 +228,20 @@ const otherProjects = [
     githubLink: "",
   },
   {
-    title: "Body Mechanics Gym Website",
-    image: BodyMech,
-    meta: "Modern fitness website featuring membership plans, trainer information, workout programs, and engaging user experience.",
-    tech: "React, Material UI",
-    liveLink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
-    githubLink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
-  },
-  {
     title: "Task Management App",
     image: TaskEasy,
     meta: "Productivity platform for managing tasks, tracking progress, organizing workflows, and improving team collaboration.",
     tech: "Next.js, MongoDB, OAuth",
     liveLink: "https://task-easy-manage.vercel.app/",
     githubLink: "https://github.com/Poovarasan-A/Task-Easy-Nextjs-Mongodb.git",
+  },
+  {
+    title: "Body Mechanics Gym Website",
+    image: BodyMech,
+    meta: "Modern fitness website featuring membership plans, trainer information, workout programs, and engaging user experience.",
+    tech: "React, Material UI",
+    liveLink: "https://poovarasan-a.github.io/Body-Mech-Gym-Web/",
+    githubLink: "https://github.com/Poovarasan-A/Body-Mech-Gym-Web.git",
   },
   {
     title: "Guest Booking App",
@@ -253,19 +253,12 @@ const otherProjects = [
       "https://github.com/Poovarasan-A/Guest-room-booking-application.git",
   },
   {
-    title: "Tech Company Websites",
+    title: "Livixius HMS",
     image: Livixius,
-    meta: "Professional corporate websites designed to showcase services, build credibility, and generate qualified leads.",
-    tech: "React, Tailwind CSS",
+    meta: "Product showcase website designed to present hotel management software features and product capabilities.",
+    tech: "HTML, CSS, GSAP",
     liveLink: "https://poovarasan-a.github.io/Livixius-web/",
     githubLink: "https://github.com/Poovarasan-A/Livixius-web.git",
-  },
-  {
-    title: "Business Websites",
-    image: Rapid,
-    meta: "Custom websites for local businesses focused on online presence, customer engagement, and lead conversion.",
-    tech: "React, Next.js",
-    liveLink: dummyLiveLink,
   },
 ];
 
@@ -367,9 +360,9 @@ const MyProjects = () => {
             variants={fadeUp}
             className="text-balance text-3xl font-bold leading-[0.95] tracking-normal text-white sm:text-4xl lg:text-5xl"
           >
-            Freelance{" "}
+            Platforms{" "}
             <span className="bg-gradient-to-r from-cyan-200 via-violet-200 to-emerald-200 bg-clip-text text-transparent">
-              Works
+              & Systems We&apos;ve Built
             </span>
           </motion.h1>
 
@@ -377,8 +370,9 @@ const MyProjects = () => {
             variants={fadeUp}
             className="mx-auto mt-7 max-w-3xl text-pretty text-base leading-8 text-zinc-300 sm:text-lg"
           >
-            Production-grade applications, scalable systems, and complete
-            digital ecosystems built end-to-end.
+            High-impact applications, multi-surface platforms, custom
+            storefronts, and specialized software engineered for real-world
+            reliability.
           </motion.p>
 
           <motion.div
@@ -682,6 +676,8 @@ const ProjectLinks = ({
       ? "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10 active:scale-95"
       : "inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-3.5 py-2 text-xs font-semibold text-white transition hover:border-cyan-300/40 hover:bg-cyan-300/10 active:scale-95";
 
+  const targetLink = project.liveLink || project.link;
+
   return (
     <div
       className={
@@ -701,15 +697,19 @@ const ProjectLinks = ({
           <FiExternalLink />
         </Link>
       )}
-      <Link
-        href={project.liveLink || project.link || dummyLiveLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={linkClass}
-      >
-        Live
-        <FiArrowUpRight />
-      </Link>
+      {targetLink && (
+        <Link
+          href={targetLink}
+          target={targetLink.startsWith("http") ? "_blank" : undefined}
+          rel={
+            targetLink.startsWith("http") ? "noopener noreferrer" : undefined
+          }
+          className={linkClass}
+        >
+          Live
+          <FiArrowUpRight />
+        </Link>
+      )}
     </div>
   );
 };
@@ -750,16 +750,16 @@ const OtherProjects = () => (
     >
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
-          Additional Builds
+          Additional Production Builds
         </p>
         <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-          Systems I&apos;ve Built
+          Specialized Web & Mobile Solutions
         </h2>
       </div>
       <p className="max-w-xl text-sm leading-7 text-zinc-400">
-        Beyond flagship products, I build focused tools, booking systems,
-        company websites, dashboards, and business experiences with the same
-        production mindset.
+        Focused business platforms, booking engines, responsive web experiences,
+        and internal tools built with high performance and production
+        reliability.
       </p>
     </motion.div>
 

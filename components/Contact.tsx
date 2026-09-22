@@ -1,7 +1,6 @@
 "use client";
 
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { motion, type Variants } from "framer-motion";
@@ -17,8 +16,6 @@ import {
   FiPhoneCall,
   FiSend,
 } from "react-icons/fi";
-
-import sign from "../public/images/sign.png";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 28 },
@@ -36,20 +33,20 @@ const container: Variants = {
 
 const contactCards = [
   {
-    label: "Phone",
-    value: "9500276714",
+    label: "Direct Line",
+    value: "+91 9500276714",
     href: "tel:+919500276714",
     icon: FiPhoneCall,
   },
   {
-    label: "Email",
-    value: "poovarasanarumugam1030@gmail.com",
-    href: "mailto:poovarasanarumugam1030@gmail.com",
+    label: "Inquiries",
+    value: "info@nexvulf.com",
+    href: "mailto:info@nexvulf.com",
     icon: FiMail,
   },
   {
-    label: "Location",
-    value: "India, available remotely",
+    label: "Studio Location",
+    value: "Bengaluru, India • Available globally",
     href: "#contact",
     icon: FiMapPin,
   },
@@ -58,21 +55,31 @@ const contactCards = [
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/Poovarasan-A", icon: FaGithub },
   {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/poovarasan-arumugam-3b798523b",
+    icon: ImLinkedin,
+  },
+  {
     label: "Instagram",
     href: "https://www.instagram.com/im_darkk_?utm_source=qr&igsh=MWlzZ3drZ3N2cmZuaw==",
     icon: GrInstagram,
   },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/poovarasan-arumugam-3b798523b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-    icon: ImLinkedin,
-  },
+];
+
+const projectTypes = [
+  "Web Application",
+  "Mobile App",
+  "Shopify / E-Commerce",
+  "Custom Software",
+  "SaaS Platform",
+  "Cloud / APIs",
 ];
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [showForm, setShowForm] = useState(true);
   const [successMsg, setSuccessMsg] = useState(false);
+  const [selectedType, setSelectedType] = useState("Web Application");
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,11 +96,12 @@ const Contact = () => {
             setTimeout(() => {
               setShowForm(true);
               setSuccessMsg(false);
-            }, 3000);
+            }, 4000);
             formRef.current?.reset();
+            setSelectedType("Web Application");
           },
           (error) => {
-            console.log("FAILED...", error.text);
+            console.log("FAILED...", error?.text || error);
           },
         );
     }
@@ -114,7 +122,7 @@ const Contact = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={container}
-          className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
+          className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start"
         >
           <div className="min-w-0">
             <motion.div
@@ -122,7 +130,7 @@ const Contact = () => {
               className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-cyan-200 backdrop-blur sm:tracking-[0.28em]"
             >
               <FiSend />
-              Start a Build
+              Initiate a Project
             </motion.div>
 
             <motion.h2
@@ -136,17 +144,17 @@ const Contact = () => {
               variants={fadeUp}
               className="mt-6 max-w-xl text-base leading-8 text-zinc-300 sm:text-lg"
             >
-              Have a SaaS product, mobile app, dashboard, business system, or
-              automation workflow in mind? I can help shape it, build it, and
-              ship it.
+              Have a web platform, mobile application, custom software, e-commerce storefront,
+              or SaaS product in mind? Reach out to discuss architectural direction, timelines,
+              and delivery.
             </motion.p>
 
-            <motion.div variants={container} className="mt-6 grid gap-3">
+            <motion.div variants={container} className="mt-8 grid gap-3">
               {contactCards.map(({ label, value, href, icon: Icon }) => (
                 <motion.div key={label} variants={fadeUp}>
                   <Link
                     href={href}
-                    className="group flex min-w-0 items-start justify-between gap-3 rounded-[8px] border border-white/10 bg-white/[0.035] p-3 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:items-center sm:gap-4 sm:p-4"
+                    className="group flex min-w-0 items-start justify-between gap-3 rounded-[8px] border border-white/10 bg-white/[0.035] p-3.5 backdrop-blur-xl transition hover:border-cyan-300/30 hover:bg-white/[0.055] sm:items-center sm:gap-4 sm:p-4"
                   >
                     <span className="flex min-w-0 flex-1 items-start gap-3 sm:items-center sm:gap-4">
                       <span className="grid h-10 w-10 flex-none place-items-center rounded-[8px] border border-cyan-300/20 bg-cyan-300/10 text-cyan-100 sm:h-11 sm:w-11">
@@ -167,7 +175,7 @@ const Contact = () => {
               ))}
             </motion.div>
 
-            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <Link
                   key={label}
@@ -185,7 +193,7 @@ const Contact = () => {
 
           <motion.div
             variants={fadeUp}
-            className="min-w-0 rounded-[8px] border border-white/10 bg-white/[0.035] p-4 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-6"
+            className="min-w-0 rounded-[8px] border border-white/10 bg-white/[0.035] p-5 shadow-[0_35px_120px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-7"
           >
             <div className="mb-6 flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-5 sm:flex-row sm:items-center">
               <div className="min-w-0">
@@ -193,12 +201,38 @@ const Contact = () => {
                   Project Inquiry
                 </p>
                 <h3 className="mt-2 text-xl font-bold leading-tight text-white sm:text-2xl">
-                  Tell me what you&apos;re building
+                  Tell us what you&apos;re building
                 </h3>
               </div>
-              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-xs font-semibold text-emerald-100">
+              <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1.5 text-xs font-semibold text-emerald-100">
                 <FiClock />
-                Fast response
+                Prompt Response
+              </div>
+            </div>
+
+            {/* Interactive Project Type Chips */}
+            <div className="mb-6">
+              <span className="block text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 mb-3">
+                Project Domain
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {projectTypes.map((type) => {
+                  const isSelected = selectedType === type;
+                  return (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setSelectedType(type)}
+                      className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition ${
+                        isSelected
+                          ? "border border-cyan-400 bg-cyan-400/20 text-cyan-100 shadow-[0_0_16px_rgba(34,211,238,0.25)]"
+                          : "border border-white/10 bg-white/[0.03] text-zinc-400 hover:border-white/20 hover:text-white"
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -208,22 +242,24 @@ const Contact = () => {
                 onSubmit={sendEmail}
                 className={`grid gap-5 transition-opacity duration-500 ${!showForm ? "opacity-0" : "opacity-100"}`}
               >
+                <input type="hidden" name="project_type" value={selectedType} />
+
                 <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Name" id="name">
+                  <Field label="Name / Company" id="name">
                     <input
                       className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
                       type="text"
-                      placeholder="Your name"
+                      placeholder="Your name or organization"
                       id="name"
                       name="from_name"
                       required
                     />
                   </Field>
-                  <Field label="Email" id="email">
+                  <Field label="Work Email" id="email">
                     <input
                       className="w-full min-w-0 border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300"
                       type="email"
-                      placeholder="you@mail.com"
+                      placeholder="name@company.com"
                       id="email"
                       name="from_email"
                       required
@@ -231,20 +267,21 @@ const Contact = () => {
                   </Field>
                 </div>
 
-                <Field label="Message" id="message">
+                <Field label="Project Scope & Requirements" id="message">
                   <textarea
-                    className="min-h-36 w-full min-w-0 resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300 lg:min-h-52"
-                    placeholder="Tell me about the product, timeline, stack, or problem..."
+                    className="min-h-36 w-full min-w-0 resize-none border-b border-white/15 bg-transparent py-3 text-sm text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300 lg:min-h-44"
+                    placeholder={`Tell us about the project goals, tech preferences, timeline, or challenges...`}
                     id="message"
                     name="message"
+                    required
                   />
                 </Field>
 
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95 sm:w-fit"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition hover:bg-cyan-100 active:scale-95 sm:w-fit"
                 >
-                  Send message
+                  Submit Inquiry
                   <FiSend />
                 </button>
               </form>
@@ -258,7 +295,7 @@ const Contact = () => {
                     Thank you for reaching out.
                   </p>
                   <p className="mt-2 text-sm text-zinc-300">
-                    I&apos;ll get back to you soon.
+                    The NexVulf team will review your requirements and respond promptly.
                   </p>
                 </div>
               </div>
@@ -266,19 +303,79 @@ const Contact = () => {
           </motion.div>
         </motion.div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-center text-sm leading-6 text-zinc-500 sm:mt-14 lg:flex-row lg:text-left">
-          <div className="flex flex-wrap items-center justify-center sm:justify-start">
-            <span>Designed and built by&nbsp;</span>
-            <Image
-              src={sign}
-              alt="Poovarasan signature"
-              className="w-20 invert opacity-80 sm:w-24"
-              loading="lazy"
-            />
+        {/* Corporate Studio Footer */}
+        <div className="mt-24 border-t border-white/10 pt-12">
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-[8px] border border-cyan-400/40 bg-gradient-to-br from-cyan-500/20 via-violet-500/20 to-emerald-500/20 text-base font-black tracking-wider text-cyan-200">
+                  NV
+                </div>
+                <div>
+                  <span className="text-base font-bold tracking-tight text-white">
+                    NexVulf
+                  </span>{" "}
+                  <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                    Technologies
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-400">
+                A modern technology studio building websites, mobile applications,
+                custom software, e-commerce storefronts, and SaaS platforms.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300">
+                Navigation
+              </p>
+              <ul className="mt-4 space-y-2.5 text-sm text-zinc-400">
+                <li>
+                  <a href="#services" className="transition hover:text-cyan-300">
+                    Services & Capabilities
+                  </a>
+                </li>
+                <li>
+                  <a href="#projects" className="transition hover:text-cyan-300">
+                    Selected Work & Case Studies
+                  </a>
+                </li>
+                <li>
+                  <a href="#reviews" className="transition hover:text-cyan-300">
+                    Client Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="transition hover:text-cyan-300">
+                    Initiate a Project
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-300">
+                Capabilities
+              </p>
+              <ul className="mt-4 space-y-2.5 text-sm text-zinc-400">
+                <li>Full-Stack Web Applications</li>
+                <li>Cross-Platform Mobile Apps</li>
+                <li>Shopify & Custom Storefronts</li>
+                <li>Backend Architecture & Cloud APIs</li>
+                <li>Scalable SaaS Platforms</li>
+              </ul>
+            </div>
           </div>
-          <p className="max-w-full break-words">
-            Full Stack Developer | Mobile + Web + Backend + Infrastructure
-          </p>
+
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs text-zinc-500 sm:flex-row">
+            <p>
+              © {new Date().getFullYear()} NexVulf Technologies. All rights reserved.
+            </p>
+            <p className="text-zinc-500">
+              Engineered for high performance, security, and production reliability.
+            </p>
+          </div>
         </div>
       </div>
     </section>

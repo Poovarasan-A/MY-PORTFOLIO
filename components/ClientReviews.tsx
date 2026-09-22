@@ -24,9 +24,9 @@ const container: Variants = {
 };
 
 const proofPoints = [
-  "Independent execution",
-  "Production ownership",
-  "Business-first engineering",
+  "Full-Lifecycle Ownership",
+  "Production Engineering",
+  "Direct Collaboration",
 ];
 
 const getInitials = (name: string) =>
@@ -59,21 +59,19 @@ const ClientReviews = () => {
             className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200 backdrop-blur"
           >
             <FiMessageSquare />
-            Client Proof
+            Client Testimonials
           </motion.div>
           <motion.h2
             variants={fadeUp}
             className="text-balance text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl"
           >
-            Trusted to take complex ideas from blank page to launch.
+            Trusted to engineer and deliver production digital solutions.
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="mx-auto mt-6 max-w-2xl text-base leading-8 text-zinc-300"
           >
-            Partners value the ability to think through product, architecture,
-            delivery, and polish without needing a large team around every
-            decision.
+            Direct feedback from founders and engineering leaders on collaboration, technical execution, and reliable delivery.
           </motion.p>
         </motion.div>
 
