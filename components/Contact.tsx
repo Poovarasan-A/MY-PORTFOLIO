@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import LogoImg from "../public/images/logo.png";
 import { motion, type Variants } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
 import { ImLinkedin } from "react-icons/im";
 import {
@@ -35,26 +35,31 @@ const container: Variants = {
 
 const contactCards = [
   {
-    label: "Direct Line",
+    label: "Direct Line & WhatsApp",
     value: "+91 9500276714",
-    href: "tel:+919500276714",
-    icon: FiPhoneCall,
+    href: "https://wa.me/919500276714",
+    icon: FaWhatsapp,
   },
   {
     label: "Inquiries",
-    value: "info@nexvulf.com",
-    href: "mailto:info@nexvulf.com",
+    value: "hello@nexvulf.com",
+    href: "mailto:hello@nexvulf.com",
     icon: FiMail,
   },
   {
-    label: "Studio Location",
-    value: "Bengaluru, India • Available globally",
+    label: "Location",
+    value: "Available globally",
     href: "#contact",
     icon: FiMapPin,
   },
 ];
 
 const socialLinks = [
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/919500276714",
+    icon: FaWhatsapp,
+  },
   { label: "GitHub", href: "https://github.com/Poovarasan-A", icon: FaGithub },
   {
     label: "LinkedIn",
@@ -81,32 +86,66 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [showForm, setShowForm] = useState(true);
   const [successMsg, setSuccessMsg] = useState(false);
+  const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState("");
   const [selectedType, setSelectedType] = useState("Web Application");
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendInquiry = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formRef.current) {
-      emailjs
-        .sendForm("service_frq8g0o", "template_wojcqsa", formRef.current, {
-          publicKey: "WXHya3AI87uriC2HT",
-        })
-        .then(
-          () => {
-            setShowForm(false);
-            setSuccessMsg(true);
-            setTimeout(() => {
-              setShowForm(true);
-              setSuccessMsg(false);
-            }, 4000);
-            formRef.current?.reset();
-            setSelectedType("Web Application");
-          },
-          (error) => {
-            console.log("FAILED...", error?.text || error);
-          },
-        );
+    if (!formRef.current) return;
+
+    const form = formRef.current;
+    const formData = new FormData(form);
+    const name = (formData.get("from_name") as string)?.trim() || "";
+    const email = (formData.get("from_email") as string)?.trim() || "";
+    const message = (formData.get("message") as string)?.trim() || "";
+    const projectType = selectedType;
+
+    const whatsappNumber = "919500276714";
+    const formattedMessage = [
+      `*New Project Inquiry - NexVulf*`,
+      ``,
+      `👤 *Name / Company:* ${name}`,
+      `📧 *Work Email:* ${email}`,
+      `🎯 *Project Domain:* ${projectType}`,
+      ``,
+      `📝 *Scope & Requirements:*`,
+      `${message}`,
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formattedMessage)}`;
+    setWhatsappRedirectUrl(whatsappUrl);
+
+    // Open WhatsApp directly in new tab/app immediately on user submit
+    if (typeof window !== "undefined") {
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     }
+
+    // Also dispatch email notification in background via EmailJS
+    emailjs
+      .sendForm("service_frq8g0o", "template_wojcqsa", form, {
+        publicKey: "WXHya3AI87uriC2HT",
+      })
+      .then(
+        () => {
+          console.log("Email notification sent successfully.");
+        },
+        (error) => {
+          console.log("EmailJS note:", error?.text || error);
+        },
+      );
+
+    // Show confirmation UI & reset
+    setShowForm(false);
+    setSuccessMsg(true);
+    setTimeout(() => {
+      setShowForm(true);
+      setSuccessMsg(false);
+      setWhatsappRedirectUrl("");
+    }, 8000);
+
+    form.reset();
+    setSelectedType("Web Application");
   };
 
   return (
@@ -146,9 +185,9 @@ const Contact = () => {
               variants={fadeUp}
               className="mt-6 max-w-xl text-base leading-8 text-zinc-600 dark:text-zinc-300 sm:text-lg"
             >
-              Have a web platform, mobile application, custom software, e-commerce storefront,
-              or SaaS product in mind? Reach out to discuss architectural direction, timelines,
-              and delivery.
+              Have a web platform, mobile application, custom software,
+              e-commerce storefront, or SaaS product in mind? Reach out to
+              discuss architectural direction, timelines, and delivery.
             </motion.p>
 
             <motion.div variants={container} className="mt-8 grid gap-3">
@@ -241,7 +280,7 @@ const Contact = () => {
             {showForm && (
               <form
                 ref={formRef}
-                onSubmit={sendEmail}
+                onSubmit={sendInquiry}
                 className={`grid gap-5 transition-opacity duration-500 ${!showForm ? "opacity-0" : "opacity-100"}`}
               >
                 <input type="hidden" name="project_type" value={selectedType} />
@@ -279,26 +318,43 @@ const Contact = () => {
                   />
                 </Field>
 
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-600 active:scale-95 dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-cyan-100 sm:w-fit"
-                >
-                  Submit Inquiry
-                  <FiSend />
-                </button>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <button
+                    type="submit"
+                    className="group inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-zinc-900 px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 active:scale-95 dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-emerald-400 dark:hover:text-black sm:w-fit"
+                  >
+                    <span>Submit Inquiry</span>
+                    <FaWhatsapp className="text-lg text-emerald-400 transition-transform group-hover:scale-110 dark:text-emerald-600" />
+                  </button>
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                    Dispatches directly to WhatsApp &amp; team inbox
+                  </span>
+                </div>
               </form>
             )}
 
             {successMsg && (
               <div className="grid min-h-56 place-items-center rounded-[8px] border border-emerald-500/30 bg-emerald-500/10 p-6 text-center dark:border-emerald-300/20 dark:bg-emerald-300/10 sm:min-h-64 sm:p-8">
-                <div>
+                <div className="max-w-md">
                   <FiCheckCircle className="mx-auto mb-4 text-4xl text-emerald-600 dark:text-emerald-200" />
                   <p className="text-xl font-semibold text-emerald-800 dark:text-emerald-100">
-                    Thank you for reaching out.
+                    Inquiry Prepared!
                   </p>
                   <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
-                    The NexVulf team will review your requirements and respond promptly.
+                    We&apos;ve opened WhatsApp with your filled project details
+                    so you can send it directly.
                   </p>
+                  {whatsappRedirectUrl && (
+                    <a
+                      href={whatsappRedirectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400"
+                    >
+                      <FaWhatsapp className="text-base" />
+                      Click here if WhatsApp didn&apos;t open
+                    </a>
+                  )}
                 </div>
               </div>
             )}
@@ -327,8 +383,9 @@ const Contact = () => {
                 </div>
               </div>
               <p className="mt-4 max-w-sm text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                A modern technology studio building websites, mobile applications,
-                custom software, e-commerce storefronts, and SaaS platforms.
+                A modern technology studio building websites, mobile
+                applications, custom software, e-commerce storefronts, and SaaS
+                platforms.
               </p>
             </div>
 
@@ -338,22 +395,34 @@ const Contact = () => {
               </p>
               <ul className="mt-4 space-y-2.5 text-sm text-zinc-600 dark:text-zinc-400">
                 <li>
-                  <a href="#services" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
+                  <a
+                    href="#services"
+                    className="transition hover:text-cyan-600 dark:hover:text-cyan-300"
+                  >
                     Services & Capabilities
                   </a>
                 </li>
                 <li>
-                  <a href="#projects" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
+                  <a
+                    href="#projects"
+                    className="transition hover:text-cyan-600 dark:hover:text-cyan-300"
+                  >
                     Selected Work & Case Studies
                   </a>
                 </li>
                 <li>
-                  <a href="#reviews" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
+                  <a
+                    href="#reviews"
+                    className="transition hover:text-cyan-600 dark:hover:text-cyan-300"
+                  >
                     Client Testimonials
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="transition hover:text-cyan-600 dark:hover:text-cyan-300">
+                  <a
+                    href="#contact"
+                    className="transition hover:text-cyan-600 dark:hover:text-cyan-300"
+                  >
                     Initiate a Project
                   </a>
                 </li>
@@ -376,10 +445,12 @@ const Contact = () => {
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-zinc-200/80 pt-8 text-xs text-zinc-500 dark:border-white/5 sm:flex-row">
             <p>
-              © {new Date().getFullYear()} NexVulf Technologies. All rights reserved.
+              © {new Date().getFullYear()} NexVulf Technologies. All rights
+              reserved.
             </p>
             <p className="text-zinc-500">
-              Engineered for high performance, security, and production reliability.
+              Engineered for high performance, security, and production
+              reliability.
             </p>
           </div>
         </div>

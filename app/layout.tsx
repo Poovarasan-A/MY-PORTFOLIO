@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Script from "next/script";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -62,8 +62,7 @@ export default function RootLayout({
               (function() {
                 try {
                   var stored = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (stored === 'dark' || (!stored && prefersDark) || !stored) {
+                  if (stored === 'dark') {
                     document.documentElement.classList.add('dark');
                   } else {
                     document.documentElement.classList.remove('dark');
@@ -113,6 +112,7 @@ export default function RootLayout({
         className={`${inter.className} bg-slate-50 dark:bg-[#020305] text-zinc-900 dark:text-white transition-colors duration-300 overflow-x-hidden scrollbar-hidden`}
       >
         <ThemeProvider>
+          <Preloader />
           {children}
         </ThemeProvider>
         <SpeedInsights />
